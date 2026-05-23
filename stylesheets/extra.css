@@ -1,0 +1,70 @@
+/* ====================================================
+   SiC Wiki - Custom Styles
+   ==================================================== */
+
+/* 한글 가독성: 줄높이 약간 늘림 */
+.md-typeset {
+    line-height: 1.75;
+    font-feature-settings: "tnum";
+}
+
+/* 본문 폰트 크기 살짝 조정 */
+.md-typeset {
+    font-size: 0.78rem;
+}
+
+/* 코드 블록 폰트 사이즈 */
+.md-typeset code,
+.md-typeset pre code {
+    font-size: 0.8em;
+}
+
+/* 표 가독성 */
+.md-typeset table:not([class]) {
+    font-size: 0.78rem;
+}
+
+.md-typeset table:not([class]) th {
+    background-color: var(--md-primary-fg-color--light);
+    color: white;
+}
+
+/* admonition 한국어 톤 */
+.md-typeset .admonition,
+.md-typeset details {
+    font-size: 0.78rem;
+}
+
+/* 그리드 카드 (홈) */
+.md-typeset .grid.cards > ul > li {
+    border-radius: 0.4rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Mermaid 다이어그램 중앙 정렬 */
+.mermaid {
+    text-align: center;
+}
+
+/* 본인 강조용 callout */
+.md-typeset .admonition.experience,
+.md-typeset details.experience {
+    border-color: rgb(43, 155, 70);
+}
+
+.md-typeset .experience > .admonition-title,
+.md-typeset .experience > summary {
+    background-color: rgba(43, 155, 70, 0.1);
+}
+
+.md-typeset .experience > .admonition-title::before,
+.md-typeset .experience > summary::before {
+    background-color: rgb(43, 155, 70);
+    -webkit-mask-image: var(--md-admonition-icon--example);
+            mask-image: var(--md-admonition-icon--example);
+}
