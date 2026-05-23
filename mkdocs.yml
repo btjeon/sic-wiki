@@ -1,0 +1,182 @@
+# ===========================================================
+# SiC 반도체 위키 - MkDocs 설정
+# 작성자: Byoungtak Jeon (전병탁)
+# ===========================================================
+
+site_name: SiC 반도체 위키
+site_description: SiC(Silicon Carbide) 반도체 소자·공정·FDC·AI 응용 정리
+site_author: Byoungtak Jeon
+site_url: https://gogotak.github.io/sic-wiki/
+
+# GitHub 저장소 — 실제 repo 주소로 변경
+repo_name: gogotak/sic-wiki
+repo_url: https://github.com/gogotak/sic-wiki
+edit_uri: edit/main/docs/
+
+copyright: Copyright &copy; 2026 Byoungtak Jeon
+
+# -----------------------------------------------------------
+# 테마: Material for MkDocs
+# -----------------------------------------------------------
+theme:
+  name: material
+  language: ko
+  features:
+    - navigation.instant         # SPA 스타일 페이지 전환
+    - navigation.tracking        # URL 자동 갱신
+    - navigation.tabs            # 상단 탭
+    - navigation.tabs.sticky
+    - navigation.sections        # 좌측 섹션 그룹
+    - navigation.expand          # 좌측 메뉴 펼침
+    - navigation.indexes         # 섹션 index.md 지원
+    - navigation.top             # 맨 위로 버튼
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy          # 코드 복사 버튼
+    - content.code.annotate      # 코드 주석
+    - content.tabs.link
+    - content.action.edit        # GitHub edit 버튼
+    - toc.follow
+  palette:
+    # 라이트 모드
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: 다크 모드로 전환
+    # 다크 모드
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/weather-sunny
+        name: 라이트 모드로 전환
+  font:
+    text: Noto Sans KR
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+
+# -----------------------------------------------------------
+# 추가 CSS / JS
+# -----------------------------------------------------------
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# -----------------------------------------------------------
+# Markdown 확장
+# -----------------------------------------------------------
+markdown_extensions:
+  # 기본 확장
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 4
+
+  # PyMdown 확장 (Material 권장)
+  - pymdownx.arithmatex:           # LaTeX 수식
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+  # PlantUML (회로도/시퀀스 다이어그램)
+  - plantuml_markdown:
+      server: http://www.plantuml.com/plantuml
+      format: svg
+
+# -----------------------------------------------------------
+# 플러그인
+# -----------------------------------------------------------
+plugins:
+  - search:
+      lang:
+        - ko
+        - en
+  - tags
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
+      fallback_to_build_date: true   # git 저장소가 아닐 때 빌드 날짜로 대체
+  - awesome-pages
+
+# -----------------------------------------------------------
+# 좌측 내비게이션
+# -----------------------------------------------------------
+nav:
+  - 홈: index.md
+  - 소개: about.md
+  - 1. 소자·공정:
+      - 개요: 01-devices-process/index.md
+      - SiC MOSFET 구조: 01-devices-process/sic-mosfet-structure.md
+      - Epitaxy 공정: 01-devices-process/epitaxy.md
+      - 결함 유형 (BPD/TED/TSD): 01-devices-process/defects.md
+  - 2. Photo 공정:
+      - 개요: 02-photolithography/index.md
+      - FEOL/BEOL 포토리소그래피: 02-photolithography/feol-beol.md
+      - OPC 마스크 설계: 02-photolithography/opc-mask.md
+      - ASML/Nikon Tool Matching: 02-photolithography/tool-matching.md
+  - 3. FDC / SPC:
+      - 개요: 03-fdc-spc/index.md
+      - Weco Rule 설계: 03-fdc-spc/weco-rules.md
+      - AI 이상 감지 적용 사례: 03-fdc-spc/ai-anomaly-detection.md
+  - 4. AI 적용:
+      - 개요: 04-ai-applications/index.md
+      - 머신비전 적용 사례: 04-ai-applications/machine-vision.md
+      - 불량 분류 모델: 04-ai-applications/defect-classification.md
+  - 참고자료:
+      - 용어집 (Glossary): references/glossary.md
+
+# -----------------------------------------------------------
+# 푸터 / 소셜
+# -----------------------------------------------------------
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/gogotak
+      name: GitHub
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/%EB%B3%91%ED%83%81-%EC%A0%84-8871b8153/
+      name: LinkedIn
+  generator: false

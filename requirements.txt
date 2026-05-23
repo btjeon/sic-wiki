@@ -1,0 +1,15 @@
+# MkDocs 핵심
+mkdocs>=1.6.0
+mkdocs-material>=9.5.0
+
+# 플러그인
+mkdocs-awesome-pages-plugin>=2.9.2
+mkdocs-git-revision-date-localized-plugin>=1.2.4
+mkdocs-material-extensions>=1.3.1
+
+# Markdown 확장
+pymdown-extensions>=10.7
+plantuml-markdown>=3.10.0
+
+# 한국어 검색 지원
+jieba>=0.42.1
