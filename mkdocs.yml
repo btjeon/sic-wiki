@@ -6,11 +6,11 @@
 site_name: SiC 반도체 위키
 site_description: SiC(Silicon Carbide) 반도체 소자·공정·FDC·AI 응용 정리
 site_author: Byoungtak Jeon
-site_url: https://gogotak.github.io/sic-wiki/
+site_url: https://btjeon.github.io/sic-wiki/
 
 # GitHub 저장소 — 실제 repo 주소로 변경
-repo_name: gogotak/sic-wiki
-repo_url: https://github.com/gogotak/sic-wiki
+repo_name: btjeon/sic-wiki
+repo_url: https://github.com/btjeon/sic-wiki
 edit_uri: edit/main/docs/
 
 copyright: Copyright &copy; 2026 Byoungtak Jeon
@@ -174,7 +174,7 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/gogotak
+      link: https://github.com/btjeon
       name: GitHub
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/%EB%B3%91%ED%83%81-%EC%A0%84-8871b8153/
