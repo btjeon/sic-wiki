@@ -68,7 +68,7 @@ SiC는 **Si 대비 다음과 같은 물성 우위**를 가집니다:
 
 ```mermaid
 flowchart LR
-    A[Si 공정 경험<br/>24년] --> B[SiC 물성 이해]
+    A-> B[SiC 물성 이해]
     B --> C[SiC MOSFET 구조]
     C --> D[SiC Epi/Implant 공정]
     D --> E[FDC/SPC for SiC]
