@@ -7,7 +7,7 @@ hide:
 # SiC 반도체 위키
 
 > **Silicon Carbide(SiC) 반도체**의 소자·공정·FDC·AI 응용을 정리한 개인 위키입니다.
-> 24년간 8인치 Fab 현장에서 쌓은 Photo·FDC·Machine Vision 경험을 SiC 도메인으로 확장하면서 학습한 내용을 기록합니다.
+> Fab,생산, QMS, FDC·Machine Vision 경험을 SiC 도메인으로 확장하면서 학습한 내용을 기록합니다.
 
 ---
 
