@@ -2,70 +2,158 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://btjeon.github.io/sic-wiki/</loc>
-         <lastmod>2026-05-23</lastmod>
+         <lastmod>2026-05-24</lastmod>
     </url>
     <url>
          <loc>https://btjeon.github.io/sic-wiki/about/</loc>
-         <lastmod>2026-05-23</lastmod>
+         <lastmod>2026-05-24</lastmod>
     </url>
     <url>
-         <loc>https://btjeon.github.io/sic-wiki/01-devices-process/</loc>
-         <lastmod>2026-05-23</lastmod>
+         <loc>https://btjeon.github.io/sic-wiki/01-foundations/</loc>
+         <lastmod>2026-05-24</lastmod>
     </url>
     <url>
-         <loc>https://btjeon.github.io/sic-wiki/01-devices-process/defects/</loc>
-         <lastmod>2026-05-23</lastmod>
+         <loc>https://btjeon.github.io/sic-wiki/01-foundations/ch01-material/</loc>
+         <lastmod>2026-05-24</lastmod>
     </url>
     <url>
-         <loc>https://btjeon.github.io/sic-wiki/01-devices-process/epitaxy/</loc>
-         <lastmod>2026-05-23</lastmod>
+         <loc>https://btjeon.github.io/sic-wiki/01-foundations/ch02-wafer-epi/</loc>
+         <lastmod>2026-05-24</lastmod>
     </url>
     <url>
-         <loc>https://btjeon.github.io/sic-wiki/01-devices-process/sic-mosfet-structure/</loc>
-         <lastmod>2026-05-23</lastmod>
+         <loc>https://btjeon.github.io/sic-wiki/01-foundations/ch03-device/</loc>
+         <lastmod>2026-05-24</lastmod>
     </url>
     <url>
-         <loc>https://btjeon.github.io/sic-wiki/02-photolithography/</loc>
-         <lastmod>2026-05-23</lastmod>
+         <loc>https://btjeon.github.io/sic-wiki/02-process/</loc>
+         <lastmod>2026-05-24</lastmod>
     </url>
     <url>
-         <loc>https://btjeon.github.io/sic-wiki/02-photolithography/feol-beol/</loc>
-         <lastmod>2026-05-23</lastmod>
+         <loc>https://btjeon.github.io/sic-wiki/02-process/ch04-process-flow/</loc>
+         <lastmod>2026-05-24</lastmod>
     </url>
     <url>
-         <loc>https://btjeon.github.io/sic-wiki/02-photolithography/opc-mask/</loc>
-         <lastmod>2026-05-23</lastmod>
+         <loc>https://btjeon.github.io/sic-wiki/02-process/ch05-onsemi-bk/</loc>
+         <lastmod>2026-05-24</lastmod>
     </url>
     <url>
-         <loc>https://btjeon.github.io/sic-wiki/02-photolithography/tool-matching/</loc>
-         <lastmod>2026-05-23</lastmod>
+         <loc>https://btjeon.github.io/sic-wiki/02-process/ch06-vertical-integration/</loc>
+         <lastmod>2026-05-24</lastmod>
     </url>
     <url>
-         <loc>https://btjeon.github.io/sic-wiki/03-fdc-spc/</loc>
-         <lastmod>2026-05-23</lastmod>
+         <loc>https://btjeon.github.io/sic-wiki/03-defect/</loc>
+         <lastmod>2026-05-24</lastmod>
     </url>
     <url>
-         <loc>https://btjeon.github.io/sic-wiki/03-fdc-spc/ai-anomaly-detection/</loc>
-         <lastmod>2026-05-23</lastmod>
+         <loc>https://btjeon.github.io/sic-wiki/03-defect/a01-classification/</loc>
+         <lastmod>2026-05-24</lastmod>
     </url>
     <url>
-         <loc>https://btjeon.github.io/sic-wiki/03-fdc-spc/weco-rules/</loc>
-         <lastmod>2026-05-23</lastmod>
+         <loc>https://btjeon.github.io/sic-wiki/03-defect/a02-surface/</loc>
+         <lastmod>2026-05-24</lastmod>
     </url>
     <url>
-         <loc>https://btjeon.github.io/sic-wiki/04-ai-applications/</loc>
-         <lastmod>2026-05-23</lastmod>
+         <loc>https://btjeon.github.io/sic-wiki/03-defect/a03-trench-subcd/</loc>
+         <lastmod>2026-05-24</lastmod>
     </url>
     <url>
-         <loc>https://btjeon.github.io/sic-wiki/04-ai-applications/defect-classification/</loc>
-         <lastmod>2026-05-23</lastmod>
+         <loc>https://btjeon.github.io/sic-wiki/03-defect/a04-killer-rca/</loc>
+         <lastmod>2026-05-24</lastmod>
     </url>
     <url>
-         <loc>https://btjeon.github.io/sic-wiki/04-ai-applications/machine-vision/</loc>
-         <lastmod>2026-05-23</lastmod>
+         <loc>https://btjeon.github.io/sic-wiki/03-defect/b05-aoi/</loc>
+         <lastmod>2026-05-24</lastmod>
     </url>
     <url>
-         <loc>https://btjeon.github.io/sic-wiki/references/glossary/</loc>
-         <lastmod>2026-05-23</lastmod>
+         <loc>https://btjeon.github.io/sic-wiki/03-defect/b06-adc/</loc>
+         <lastmod>2026-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://btjeon.github.io/sic-wiki/03-defect/b07-klarity/</loc>
+         <lastmod>2026-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://btjeon.github.io/sic-wiki/03-defect/c08-spc/</loc>
+         <lastmod>2026-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://btjeon.github.io/sic-wiki/03-defect/c09-vog/</loc>
+         <lastmod>2026-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://btjeon.github.io/sic-wiki/03-defect/c10-new-process/</loc>
+         <lastmod>2026-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://btjeon.github.io/sic-wiki/03-defect/d11-reliability/</loc>
+         <lastmod>2026-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://btjeon.github.io/sic-wiki/03-defect/d12-gate-oxide/</loc>
+         <lastmod>2026-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://btjeon.github.io/sic-wiki/03-defect/d13-bti/</loc>
+         <lastmod>2026-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://btjeon.github.io/sic-wiki/03-defect/d14-body-diode/</loc>
+         <lastmod>2026-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://btjeon.github.io/sic-wiki/04-control-ai/</loc>
+         <lastmod>2026-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://btjeon.github.io/sic-wiki/04-control-ai/ai-defect-classification/</loc>
+         <lastmod>2026-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://btjeon.github.io/sic-wiki/04-control-ai/ai-machine-vision/</loc>
+         <lastmod>2026-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://btjeon.github.io/sic-wiki/04-control-ai/ai-rca-ontology/</loc>
+         <lastmod>2026-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://btjeon.github.io/sic-wiki/04-control-ai/fdc-ai-anomaly/</loc>
+         <lastmod>2026-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://btjeon.github.io/sic-wiki/04-control-ai/fdc-gnn/</loc>
+         <lastmod>2026-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://btjeon.github.io/sic-wiki/04-control-ai/fdc-weco-rules/</loc>
+         <lastmod>2026-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://btjeon.github.io/sic-wiki/04-control-ai/photo-feol-beol/</loc>
+         <lastmod>2026-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://btjeon.github.io/sic-wiki/04-control-ai/photo-opc/</loc>
+         <lastmod>2026-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://btjeon.github.io/sic-wiki/04-control-ai/photo-tool-matching/</loc>
+         <lastmod>2026-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://btjeon.github.io/sic-wiki/05-references/</loc>
+         <lastmod>2026-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://btjeon.github.io/sic-wiki/05-references/brd8094/</loc>
+         <lastmod>2026-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://btjeon.github.io/sic-wiki/05-references/glossary/</loc>
+         <lastmod>2026-05-24</lastmod>
+    </url>
+    <url>
+         <loc>https://btjeon.github.io/sic-wiki/05-references/tnd6396/</loc>
+         <lastmod>2026-05-24</lastmod>
     </url>
 </urlset>
