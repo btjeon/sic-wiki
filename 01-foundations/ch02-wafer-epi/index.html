@@ -1,12 +1,12 @@
 
 <!doctype html>
-<html lang="ko" class="no-js">
+<html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="SiC(Silicon Carbide) 반도체 소자·공정·FDC·AI 응용 정리">
+        <meta name="description" content="SiC (Silicon Carbide) semiconductor device, process, FDC, and AI applications knowledge base">
       
       
         <meta name="author" content="Byoungtak Jeon">
@@ -29,7 +29,7 @@
     
     
       
-        <title>Ch.2 SiC 웨이퍼 & 에피택셜 성장 - SiC 반도체 위키</title>
+        <title>Ch.2 SiC Wafer & Epitaxial Growth - SiC Semiconductor Wiki</title>
       
     
     
@@ -50,8 +50,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Noto Sans KR";--md-code-font:"JetBrains Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -82,8 +82,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#ch2-sic" class="md-skip">
-          콘텐츠로 이동
+        <a href="#ch2-sic-wafer-epitaxial-growth" class="md-skip">
+          Skip to content
         </a>
       
     </div>
@@ -97,8 +97,8 @@
   
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
-    <a href="../.." title="SiC 반도체 위키" class="md-header__button md-logo" aria-label="SiC 반도체 위키" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SiC Semiconductor Wiki" class="md-header__button md-logo" aria-label="SiC Semiconductor Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,13 +112,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            SiC 반도체 위키
+            SiC Semiconductor Wiki
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ch.2 SiC 웨이퍼 & 에피택셜 성장
+              Ch.2 SiC Wafer & Epitaxial Growth
             
           </span>
         </div>
@@ -131,9 +131,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="다크 모드로 전환"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="다크 모드로 전환" for="__palette_1" hidden>
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
       </label>
     
@@ -141,9 +141,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="라이트 모드로 전환"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="라이트 모드로 전환" for="__palette_0" hidden>
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
       </label>
     
@@ -166,21 +166,21 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="검색">
+      <nav class="md-search__options" aria-label="Search">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="공유" aria-label="공유" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
           </a>
         
-        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -193,7 +193,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            검색 초기화
+            Initializing search
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -205,7 +205,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/btjeon/sic-wiki" title="저장소로 이동" class="md-source" data-md-component="source">
+        <a href="https://github.com/btjeon/sic-wiki" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
@@ -220,7 +220,7 @@
   
     
       
-<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
@@ -236,7 +236,7 @@
   
     
   
-  홈
+  Home
 
       </a>
     </li>
@@ -255,7 +255,7 @@
   
     
   
-  소개
+  About
 
       </a>
     </li>
@@ -344,7 +344,7 @@
   
     
   
-  Part IV. 공정 제어 & AI 확장
+  Part IV. Process Control & AI Extension
 
         </a>
       </li>
@@ -400,19 +400,19 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="SiC 반도체 위키" class="md-nav__button md-logo" aria-label="SiC 반도체 위키" data-md-component="logo">
+    <a href="../.." title="SiC Semiconductor Wiki" class="md-nav__button md-logo" aria-label="SiC Semiconductor Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    SiC 반도체 위키
+    SiC Semiconductor Wiki
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/btjeon/sic-wiki" title="저장소로 이동" class="md-source" data-md-component="source">
+      <a href="https://github.com/btjeon/sic-wiki" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
@@ -439,7 +439,7 @@
   <span class="md-ellipsis">
     
   
-    홈
+    Home
   
 
     
@@ -466,7 +466,7 @@
   <span class="md-ellipsis">
     
   
-    소개
+    About
   
 
     
@@ -571,7 +571,7 @@
   <span class="md-ellipsis">
     
   
-    Ch.1 SiC 재료·결정 기초
+    Ch.1 SiC Material & Crystal Fundamentals
   
 
     
@@ -608,7 +608,7 @@
   <span class="md-ellipsis">
     
   
-    Ch.2 SiC 웨이퍼 & 에피택셜 성장
+    Ch.2 SiC Wafer & Epitaxial Growth
   
 
     
@@ -626,7 +626,7 @@
   <span class="md-ellipsis">
     
   
-    Ch.2 SiC 웨이퍼 & 에피택셜 성장
+    Ch.2 SiC Wafer & Epitaxial Growth
   
 
     
@@ -638,7 +638,7 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="목차">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -647,15 +647,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      목차
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-crystal-growth" class="md-nav__link">
+  <a href="#1-ingot-growth-crystal-growth" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 잉고트 성장 (Crystal Growth)
+        1. Ingot Growth (Crystal Growth)
       
     </span>
   </a>
@@ -663,10 +663,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-slicing-lapping-polishing" class="md-nav__link">
+  <a href="#2-wafer-processing-slicing-lapping-polishing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. 웨이퍼 가공 (Slicing · Lapping · Polishing)
+        2. Wafer Processing (Slicing · Lapping · Polishing)
       
     </span>
   </a>
@@ -674,22 +674,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-drift-layer" class="md-nav__link">
+  <a href="#3-epitaxial-growth-drift-layer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. 에피택셜 성장 (Drift Layer)
+        3. Epitaxial Growth (Drift Layer)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. 에피택셜 성장 (Drift Layer)">
+    <nav class="md-nav" aria-label="3. Epitaxial Growth (Drift Layer)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31" class="md-nav__link">
+  <a href="#31-process-overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.1 공정 개요
+        3.1 Process Overview
       
     </span>
   </a>
@@ -719,10 +719,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#34" class="md-nav__link">
+  <a href="#34-thickness-doping-uniformity-targets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.4 두께 / 농도 균일도 목표
+        3.4 Thickness / Doping Uniformity Targets
       
     </span>
   </a>
@@ -735,10 +735,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-aoi-adc" class="md-nav__link">
+  <a href="#4-epi-surface-defects-aoi-adc-detection-targets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. 에피 표면 결함 (AOI / ADC 검출 대상)
+        4. Epi Surface Defects (AOI / ADC Detection Targets)
       
     </span>
   </a>
@@ -746,15 +746,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-in-line-end-of-line" class="md-nav__link">
+  <a href="#5-in-line-end-of-line-measurement" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. In-line / End-of-line 측정
+        5. In-line / End-of-line Measurement
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="5. In-line / End-of-line 측정">
+    <nav class="md-nav" aria-label="5. In-line / End-of-line Measurement">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -785,10 +785,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
+  <a href="#6-defect-response-trends" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. 결함 대응 트렌드
+        6. Defect Response Trends
       
     </span>
   </a>
@@ -796,10 +796,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-fdc" class="md-nav__link">
+  <a href="#7-measurement-fdc-linkage" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. 측정 → FDC 연결
+        7. Measurement → FDC Linkage
       
     </span>
   </a>
@@ -807,10 +807,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#8" class="md-nav__link">
+  <a href="#8-references" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8. 참고자료
+        8. References
       
     </span>
   </a>
@@ -818,10 +818,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2026-05-24" class="md-nav__link">
+  <a href="#notes-2026-05-24" class="md-nav__link">
     <span class="md-ellipsis">
       
-        추가 노트 (2026-05-24)
+        Notes (2026-05-24)
       
     </span>
   </a>
@@ -851,7 +851,7 @@
   <span class="md-ellipsis">
     
   
-    Ch.3 SiC 디바이스 구조
+    Ch.3 SiC Device Structures
   
 
     
@@ -961,7 +961,7 @@
   <span class="md-ellipsis">
     
   
-    Ch.4 SiC 공정 흐름 (FEOL→BEOL)
+    Ch.4 SiC Process Flow (FEOL → BEOL)
   
 
     
@@ -989,7 +989,7 @@
   <span class="md-ellipsis">
     
   
-    Ch.5 onsemi SiC 사업·제품·BK Factory
+    Ch.5 onsemi SiC Business · Products · BK Factory
   
 
     
@@ -1017,7 +1017,7 @@
   <span class="md-ellipsis">
     
   
-    Ch.6 수직계열 통합 공급망 & EV 전략
+    Ch.6 Vertical Supply Chain & EV Strategy
   
 
     
@@ -1157,7 +1157,7 @@
   <span class="md-ellipsis">
     
   
-    A. 결함의 이해
+    A. Understanding Defects
   
 
     
@@ -1173,7 +1173,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    A. 결함의 이해
+    A. Understanding Defects
   
 
           </label>
@@ -1193,7 +1193,7 @@
   <span class="md-ellipsis">
     
   
-    A-1 결함 분류 체계
+    A-1 Defect Classification
   
 
     
@@ -1221,7 +1221,7 @@
   <span class="md-ellipsis">
     
   
-    A-2 SiC 표면 결함
+    A-2 SiC Surface Defects
   
 
     
@@ -1249,7 +1249,7 @@
   <span class="md-ellipsis">
     
   
-    A-3 Trench·Sub-CD 마이크로 결함
+    A-3 Trench & Sub-CD Micro Defects
   
 
     
@@ -1277,7 +1277,7 @@
   <span class="md-ellipsis">
     
   
-    A-4 Killer/Slow-Killer RCA
+    A-4 Killer / Slow-Killer RCA
   
 
     
@@ -1339,7 +1339,7 @@
   <span class="md-ellipsis">
     
   
-    B. 검사 장비·AI·운영
+    B. Inspection Equipment · AI · Operations
   
 
     
@@ -1355,7 +1355,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    B. 검사 장비·AI·운영
+    B. Inspection Equipment · AI · Operations
   
 
           </label>
@@ -1375,7 +1375,7 @@
   <span class="md-ellipsis">
     
   
-    B-5 AOI 검사 장비 운영
+    B-5 AOI Equipment Operations
   
 
     
@@ -1431,7 +1431,7 @@
   <span class="md-ellipsis">
     
   
-    B-7 Klarity 운영
+    B-7 Klarity Operations
   
 
     
@@ -1493,7 +1493,7 @@
   <span class="md-ellipsis">
     
   
-    C. 관리 체계·품질
+    C. Control Systems · Quality
   
 
     
@@ -1509,7 +1509,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    C. 관리 체계·품질
+    C. Control Systems · Quality
   
 
           </label>
@@ -1529,7 +1529,7 @@
   <span class="md-ellipsis">
     
   
-    C-8 SPC 기반 결함 밀도 관리
+    C-8 SPC-based Defect Density Mgmt
   
 
     
@@ -1585,7 +1585,7 @@
   <span class="md-ellipsis">
     
   
-    C-10 신규 공정 도입시 결함 관리
+    C-10 New Process Introduction
   
 
     
@@ -1649,7 +1649,7 @@
   <span class="md-ellipsis">
     
   
-    D. 신뢰성 백서 (TND6396)
+    D. Reliability White Paper (TND6396)
   
 
     
@@ -1665,7 +1665,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    D. 신뢰성 백서 (TND6396)
+    D. Reliability White Paper (TND6396)
   
 
           </label>
@@ -1685,7 +1685,7 @@
   <span class="md-ellipsis">
     
   
-    D-11 신뢰성 방법론 & Qualification
+    D-11 Reliability Methodology & Qualification
   
 
     
@@ -1713,7 +1713,7 @@
   <span class="md-ellipsis">
     
   
-    D-12 SiC/SiO₂ 계면 & Gate Oxide
+    D-12 SiC/SiO₂ Interface & Gate Oxide
   
 
     
@@ -1843,7 +1843,7 @@
   <span class="md-ellipsis">
     
   
-    Part IV. 공정 제어 & AI 확장
+    Part IV. Process Control & AI Extension
   
 
     
@@ -1865,7 +1865,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Part IV. 공정 제어 & AI 확장
+    Part IV. Process Control & AI Extension
   
 
           </label>
@@ -1913,7 +1913,7 @@
   <span class="md-ellipsis">
     
   
-    Photo 공정
+    Photo Process
   
 
     
@@ -1929,7 +1929,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Photo 공정
+    Photo Process
   
 
           </label>
@@ -1949,7 +1949,7 @@
   <span class="md-ellipsis">
     
   
-    FEOL/BEOL 포토리소그래피
+    FEOL/BEOL Photolithography
   
 
     
@@ -1977,7 +1977,7 @@
   <span class="md-ellipsis">
     
   
-    OPC 마스크 설계
+    OPC Mask Design
   
 
     
@@ -2103,7 +2103,7 @@
   <span class="md-ellipsis">
     
   
-    Weco Rule 설계
+    WECO Rule Design
   
 
     
@@ -2131,7 +2131,7 @@
   <span class="md-ellipsis">
     
   
-    FDC AI 이상 감지 사례
+    FDC AI Anomaly Detection
   
 
     
@@ -2159,7 +2159,7 @@
   <span class="md-ellipsis">
     
   
-    GNN 기반 FDC
+    GNN-based FDC
   
 
     
@@ -2257,7 +2257,7 @@
   <span class="md-ellipsis">
     
   
-    머신비전 적용 (WCMP)
+    Machine Vision (WCMP)
   
 
     
@@ -2285,7 +2285,7 @@
   <span class="md-ellipsis">
     
   
-    불량 분류 모델
+    Defect Classification Model
   
 
     
@@ -2313,7 +2313,7 @@
   <span class="md-ellipsis">
     
   
-    RCA Ontology (PCB→SiC)
+    RCA Ontology (PCB → SiC)
   
 
     
@@ -2487,7 +2487,7 @@
   <span class="md-ellipsis">
     
   
-    용어집 (Glossary)
+    Glossary
   
 
     
@@ -2521,7 +2521,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="목차">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -2530,15 +2530,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      목차
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-crystal-growth" class="md-nav__link">
+  <a href="#1-ingot-growth-crystal-growth" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 잉고트 성장 (Crystal Growth)
+        1. Ingot Growth (Crystal Growth)
       
     </span>
   </a>
@@ -2546,10 +2546,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-slicing-lapping-polishing" class="md-nav__link">
+  <a href="#2-wafer-processing-slicing-lapping-polishing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. 웨이퍼 가공 (Slicing · Lapping · Polishing)
+        2. Wafer Processing (Slicing · Lapping · Polishing)
       
     </span>
   </a>
@@ -2557,22 +2557,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-drift-layer" class="md-nav__link">
+  <a href="#3-epitaxial-growth-drift-layer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. 에피택셜 성장 (Drift Layer)
+        3. Epitaxial Growth (Drift Layer)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. 에피택셜 성장 (Drift Layer)">
+    <nav class="md-nav" aria-label="3. Epitaxial Growth (Drift Layer)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31" class="md-nav__link">
+  <a href="#31-process-overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.1 공정 개요
+        3.1 Process Overview
       
     </span>
   </a>
@@ -2602,10 +2602,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#34" class="md-nav__link">
+  <a href="#34-thickness-doping-uniformity-targets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.4 두께 / 농도 균일도 목표
+        3.4 Thickness / Doping Uniformity Targets
       
     </span>
   </a>
@@ -2618,10 +2618,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-aoi-adc" class="md-nav__link">
+  <a href="#4-epi-surface-defects-aoi-adc-detection-targets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. 에피 표면 결함 (AOI / ADC 검출 대상)
+        4. Epi Surface Defects (AOI / ADC Detection Targets)
       
     </span>
   </a>
@@ -2629,15 +2629,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-in-line-end-of-line" class="md-nav__link">
+  <a href="#5-in-line-end-of-line-measurement" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. In-line / End-of-line 측정
+        5. In-line / End-of-line Measurement
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="5. In-line / End-of-line 측정">
+    <nav class="md-nav" aria-label="5. In-line / End-of-line Measurement">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2668,10 +2668,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
+  <a href="#6-defect-response-trends" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. 결함 대응 트렌드
+        6. Defect Response Trends
       
     </span>
   </a>
@@ -2679,10 +2679,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-fdc" class="md-nav__link">
+  <a href="#7-measurement-fdc-linkage" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. 측정 → FDC 연결
+        7. Measurement → FDC Linkage
       
     </span>
   </a>
@@ -2690,10 +2690,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#8" class="md-nav__link">
+  <a href="#8-references" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8. 참고자료
+        8. References
       
     </span>
   </a>
@@ -2701,10 +2701,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2026-05-24" class="md-nav__link">
+  <a href="#notes-2026-05-24" class="md-nav__link">
     <span class="md-ellipsis">
       
-        추가 노트 (2026-05-24)
+        Notes (2026-05-24)
       
     </span>
   </a>
@@ -2728,7 +2728,7 @@
 
 
   
-    <a href="https://github.com/btjeon/sic-wiki/edit/main/docs/01-foundations/ch02-wafer-epi.md" title="이 페이지를 편집" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/btjeon/sic-wiki/edit/main/docs/01-foundations/ch02-wafer-epi.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2736,160 +2736,160 @@
   
 
 
-<h1 id="ch2-sic">Ch.2 SiC 웨이퍼 &amp; 에피택셜 성장<a class="headerlink" href="#ch2-sic" title="Permanent link">&para;</a></h1>
+<h1 id="ch2-sic-wafer-epitaxial-growth">Ch.2 SiC Wafer &amp; Epitaxial Growth<a class="headerlink" href="#ch2-sic-wafer-epitaxial-growth" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>핵심 키워드</strong>: PVT · CMP · CVD epi · C/Si ratio · 4° off-cut · BPD→TED · Carrot / Triangular / Comet
-<strong>목적</strong>: 잉고트 성장 → Slicing → 에피택셜 성장까지 — 결함이 어디서 태어나는지 추적.</p>
+<p><strong>Keywords</strong>: PVT · CMP · CVD epi · C/Si ratio · 4° off-cut · BPD → TED · Carrot / Triangular / Comet
+<strong>Purpose</strong>: Track where defects are born — from ingot growth → slicing → epitaxial growth.</p>
 </blockquote>
-<h2 id="1-crystal-growth">1. 잉고트 성장 (Crystal Growth)<a class="headerlink" href="#1-crystal-growth" title="Permanent link">&para;</a></h2>
+<h2 id="1-ingot-growth-crystal-growth">1. Ingot Growth (Crystal Growth)<a class="headerlink" href="#1-ingot-growth-crystal-growth" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>PVT (Physical Vapor Transport)</strong> — 현재 주류. SiC 분말을 2,300 ℃ 이상으로 승화 → Seed Crystal 위에 재증착.</li>
-<li><strong>HTCVD / Solution Growth</strong> — 고품질 외 에피용. 대량 양산은 제한적.</li>
-<li><strong>핵심 결함 원인</strong> — 적층 결함 (Stacking Fault), Micropipe, BPD / TSD / TED 결정 전위.</li>
+<li><strong>PVT (Physical Vapor Transport)</strong> — current mainstream. SiC powder is sublimed above 2,300 ℃ and re-deposited on the seed crystal.</li>
+<li><strong>HTCVD / Solution Growth</strong> — for high-quality epi outside the bulk path. Mass production is limited.</li>
+<li><strong>Primary defect sources</strong> — Stacking Faults, micropipes, BPD / TSD / TED dislocations.</li>
 </ul>
-<h2 id="2-slicing-lapping-polishing">2. 웨이퍼 가공 (Slicing · Lapping · Polishing)<a class="headerlink" href="#2-slicing-lapping-polishing" title="Permanent link">&para;</a></h2>
+<h2 id="2-wafer-processing-slicing-lapping-polishing">2. Wafer Processing (Slicing · Lapping · Polishing)<a class="headerlink" href="#2-wafer-processing-slicing-lapping-polishing" title="Permanent link">&para;</a></h2>
 <ul>
-<li>SiC 는 Si 보다 단단하여 <strong>Diamond Wire Saw</strong> + <strong>CMP</strong> 사용 → 설비·소모품 비용 높음.</li>
-<li>표면 상태 (Sub-surface damage) 가 이후 에피 결함 밀도를 좌우 → 웨이퍼 Vendor Qualification 이 결함 엔지니어링의 첫 단계.</li>
+<li>SiC is harder than Si, so <strong>Diamond Wire Saw</strong> + <strong>CMP</strong> are used → equipment and consumable cost is high.</li>
+<li>Sub-surface damage dictates downstream epi defect density → wafer <strong>vendor qualification</strong> is the first stage of defect engineering.</li>
 </ul>
-<h2 id="3-drift-layer">3. 에피택셜 성장 (Drift Layer)<a class="headerlink" href="#3-drift-layer" title="Permanent link">&para;</a></h2>
-<h3 id="31">3.1 공정 개요<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<h2 id="3-epitaxial-growth-drift-layer">3. Epitaxial Growth (Drift Layer)<a class="headerlink" href="#3-epitaxial-growth-drift-layer" title="Permanent link">&para;</a></h2>
+<h3 id="31-process-overview">3.1 Process Overview<a class="headerlink" href="#31-process-overview" title="Permanent link">&para;</a></h3>
 <pre class="mermaid"><code>flowchart LR
-    A[N+ Substrate&lt;br/&gt;0.02 Ω·cm] --&gt; B[H₂ Etching&lt;br/&gt;표면 정리]
+    A[N+ Substrate&lt;br/&gt;0.02 Ω·cm] --&gt; B[H₂ Etching&lt;br/&gt;surface prep]
     B --&gt; C[Buffer Layer&lt;br/&gt;~1 μm, 1e18]
-    C --&gt; D[Drift Layer 성장&lt;br/&gt;SiH₄ + C₃H₈ + N₂ + H₂]
+    C --&gt; D[Drift Layer growth&lt;br/&gt;SiH₄ + C₃H₈ + N₂ + H₂]
     D --&gt; E[Cool-down&lt;br/&gt;H₂ purge]</code></pre>
 <ul>
-<li>Si source: <strong>Silane (SiH₄)</strong> 또는 <strong>TCS (SiHCl₃)</strong></li>
-<li>C source: <strong>Propane (C₃H₈)</strong> 또는 <strong>Ethylene (C₂H₄)</strong></li>
-<li>N-type dopant: <strong>N₂</strong> (소량)</li>
+<li>Si source: <strong>Silane (SiH₄)</strong> or <strong>TCS (SiHCl₃)</strong></li>
+<li>C source: <strong>Propane (C₃H₈)</strong> or <strong>Ethylene (C₂H₄)</strong></li>
+<li>N-type dopant: <strong>N₂</strong> (trace)</li>
 <li>Carrier gas: <strong>H₂</strong></li>
-<li>온도: <strong>1,500 ~ 1,650 ℃</strong>, 압력: <strong>수십 ~ 200 mbar</strong></li>
-<li>두께 / 농도가 Breakdown Voltage 를 결정 — 1,200 V 급 ~10 μm, 1,700 V 급 ~15 μm 수준.</li>
-<li><strong>Multi-epi</strong> — Super Junction · Drift · Buffer / Field-Stop 등 다층 구조.</li>
+<li>Temperature: <strong>1,500 ~ 1,650 ℃</strong>, Pressure: <strong>tens ~ 200 mbar</strong></li>
+<li>Thickness / doping determines breakdown voltage — ~10 μm for 1,200 V class, ~15 μm for 1,700 V class.</li>
+<li><strong>Multi-epi</strong> — multilayer stacks for Super Junction · Drift · Buffer / Field-Stop.</li>
 </ul>
 <h3 id="32-csi-ratio">3.2 C/Si Ratio<a class="headerlink" href="#32-csi-ratio" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th>C/Si</th>
-<th>특성</th>
+<th>Characteristic</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>&lt; 1 (Si-rich)</td>
-<td>Doping 효율↑, Stacking Fault 발생↑</td>
+<td>Doping efficiency ↑, Stacking Fault occurrence ↑</td>
 </tr>
 <tr>
 <td>≈ 1</td>
-<td>균형</td>
+<td>Balanced</td>
 </tr>
 <tr>
 <td>&gt; 1 (C-rich)</td>
-<td>결함↓, Doping 효율↓</td>
+<td>Fewer defects, doping efficiency ↓</td>
 </tr>
 </tbody>
 </table>
-<p>일반적으로 <strong>0.9 ~ 1.2</strong> 사이에서 최적화.</p>
+<p>Typically optimized in the <strong>0.9 ~ 1.2</strong> range.</p>
 <h3 id="33-off-axis-substrate-4-off">3.3 Off-axis Substrate (4° off)<a class="headerlink" href="#33-off-axis-substrate-4-off" title="Permanent link">&para;</a></h3>
-<p>4H-SiC 기판은 일반적으로 <strong>(0001) Si-face 에서 4° off-cut</strong>:</p>
+<p>4H-SiC substrates are typically <strong>4° off-cut from the (0001) Si-face</strong>:</p>
 <ul>
-<li><strong>장점</strong> — Step-flow 성장 → polytype 안정성.</li>
-<li><strong>단점</strong> — Substrate BPD 가 epi layer 로 propagate → <strong>BPD→TED 전환</strong> 을 유도하는 조건 최적화 필요.</li>
+<li><strong>Pro</strong> — Step-flow growth → polytype stability.</li>
+<li><strong>Con</strong> — Substrate BPDs propagate into the epi layer → conditions must be optimized to favor the <strong>BPD → TED conversion</strong>.</li>
 </ul>
-<p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjb250ZW50U3R5bGVUeXBlPSJ0ZXh0L2NzcyIgZGF0YS1kaWFncmFtLXR5cGU9IkRFU0NSSVBUSU9OIiBoZWlnaHQ9IjI3MXB4IiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiBzdHlsZT0id2lkdGg6MzMycHg7aGVpZ2h0OjI3MXB4O2JhY2tncm91bmQ6I0ZGRkZGRjsiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDMzMiAyNzEiIHdpZHRoPSIzMzJweCIgem9vbUFuZFBhbj0ibWFnbmlmeSI+PD9wbGFudHVtbCAxLjIwMjYuNGJldGEyPz48ZGVmcy8+PGc+PCEtLWVudGl0eSBzdWItLT48ZyBjbGFzcz0iZW50aXR5IiBkYXRhLXF1YWxpZmllZC1uYW1lPSJzdWIiIGRhdGEtc291cmNlLWxpbmU9IjMiIGlkPSJlbnQwMDAyIj48cmVjdCBmaWxsPSIjRkZGRkZGIiBoZWlnaHQ9IjM2LjI5NjkiIHJ4PSIyLjUiIHJ5PSIyLjUiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MTsiIHdpZHRoPSIxNDIuMDIxNSIgeD0iMTIiIHk9IjEyIi8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IlZlcmRhbmEiIGZvbnQtc2l6ZT0iMTQiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMTIyLjAyMTUiIHg9IjIyIiB5PSIzNC45OTUxIj5TdWJzdHJhdGUgKDQmIzE3Njsgb2ZmKTwvdGV4dD48L2c+PCEtLWVudGl0eSBidWYtLT48ZyBjbGFzcz0iZW50aXR5IiBkYXRhLXF1YWxpZmllZC1uYW1lPSJidWYiIGRhdGEtc291cmNlLWxpbmU9IjQiIGlkPSJlbnQwMDAzIj48cmVjdCBmaWxsPSIjRkZGRkZGIiBoZWlnaHQ9IjM2LjI5NjkiIHJ4PSIyLjUiIHJ5PSIyLjUiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MTsiIHdpZHRoPSIxMTkuMjM3MyIgeD0iMjMuMzkiIHk9IjEwOC4zIi8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IlZlcmRhbmEiIGZvbnQtc2l6ZT0iMTQiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iOTkuMjM3MyIgeD0iMzMuMzkiIHk9IjEzMS4yOTUxIj5CdWZmZXIgfiAxICYjOTU2O208L3RleHQ+PC9nPjwhLS1lbnRpdHkgZHJpZnQtLT48ZyBjbGFzcz0iZW50aXR5IiBkYXRhLXF1YWxpZmllZC1uYW1lPSJkcmlmdCIgZGF0YS1zb3VyY2UtbGluZT0iNSIgaWQ9ImVudDAwMDQiPjxyZWN0IGZpbGw9IiNGRkZGRkYiIGhlaWdodD0iNTIuNTkzOCIgcng9IjIuNSIgcnk9IjIuNSIgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxOyIgd2lkdGg9IjEyNS4zODk2IiB4PSIyMC4zMiIgeT0iMjA0LjYiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iVmVyZGFuYSIgZm9udC1zaXplPSIxNCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSI3NC4zMjcxIiB4PSIzMC4zMiIgeT0iMjI3LjU5NTEiPkRyaWZ0IExheWVyPC90ZXh0Pjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJWZXJkYW5hIiBmb250LXNpemU9IjE0IiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjEwNS4zODk2IiB4PSIzMC4zMiIgeT0iMjQzLjg5MiI+MTAgJiM5NTY7bSAoMTIwMFYpPC90ZXh0PjwvZz48ZyBjbGFzcz0iZW50aXR5IiBkYXRhLXF1YWxpZmllZC1uYW1lPSJHTU43IiBkYXRhLXNvdXJjZS1saW5lPSI5IiBpZD0iZW50MDAwOCI+PHBhdGggZD0iTTE4MC4zOSwyMTAuNzYgTDE4MC4zOSwyMjcuMTkgTDE0NS43NywyMzEuMTkgTDE4MC4zOSwyMzUuMTkgTDE4MC4zOSwyNTEuMDI1NiBBMCwwIDAgMCAwIDE4MC4zOSwyNTEuMDI1NiBMMzE3LjYyNSwyNTEuMDI1NiBBMCwwIDAgMCAwIDMxNy42MjUsMjUxLjAyNTYgTDMxNy42MjUsMjIwLjc2IEwzMDcuNjI1LDIxMC43NiBMMTgwLjM5LDIxMC43NiBBMCwwIDAgMCAwIDE4MC4zOSwyMTAuNzYiIGZpbGw9IiNGRkZGRkYiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MTsiLz48cGF0aCBkPSJNMzA3LjYyNSwyMTAuNzYgTDMwNy42MjUsMjIwLjc2IEwzMTcuNjI1LDIyMC43NiBMMzA3LjYyNSwyMTAuNzYiIGZpbGw9IiNGRkZGRkYiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MTsiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iVmVyZGFuYSIgZm9udC1zaXplPSIxMyIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIxMTAuNzE1OCIgeD0iMTg2LjM5IiB5PSIyMjcuODI2OSI+U3RlcC1mbG93IGdyb3d0aDwvdGV4dD48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iVmVyZGFuYSIgZm9udC1zaXplPSIxMyIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIxMTYuMjM1IiB4PSIxODYuMzkiIHk9IjI0Mi45NTk3Ij5CUEQgJiM4NTk0OyBURUQgJiM0ODMyMDsmIzU0ODcyOyAmIzQ0NDI4OyYjNTExMDk7PC90ZXh0PjwvZz48IS0tbGluayBzdWIgdG8gYnVmLS0+PGcgY2xhc3M9ImxpbmsiIGRhdGEtZW50aXR5LTE9ImVudDAwMDIiIGRhdGEtZW50aXR5LTI9ImVudDAwMDMiIGRhdGEtbGluay10eXBlPSJhc3NvY2lhdGlvbiIgZGF0YS1zb3VyY2UtbGluZT0iNiIgaWQ9ImxuazUiPjxwYXRoIGQ9Ik04My4wMSw0OC43MiBDODMuMDEsNjUuNzcgODMuMDEsOTAuOSA4My4wMSwxMDcuOTQiIGZpbGw9Im5vbmUiIGlkPSJzdWItYnVmIiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjE7Ii8+PC9nPjwhLS1saW5rIGJ1ZiB0byBkcmlmdC0tPjxnIGNsYXNzPSJsaW5rIiBkYXRhLWVudGl0eS0xPSJlbnQwMDAzIiBkYXRhLWVudGl0eS0yPSJlbnQwMDA0IiBkYXRhLWxpbmstdHlwZT0iYXNzb2NpYXRpb24iIGRhdGEtc291cmNlLWxpbmU9IjciIGlkPSJsbms2Ij48cGF0aCBkPSJNODMuMDEsMTQ0LjY0IEM4My4wMSwxNjEuMTIgODMuMDEsMTg1LjYxIDgzLjAxLDIwNC4yOSIgZmlsbD0ibm9uZSIgaWQ9ImJ1Zi1kcmlmdCIgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxOyIvPjwvZz48P3BsYW50dW1sLXNyYyBLb3A5SUNyRExJWjhJU3BDdW9oRXBpbWhJMm5BcDVOOG9TbkJCUWFpSTVOOEJvaDlvRVNnSWFxa0lTbkJwcWJMSzBla0pJZWtBS2VpSUxOR0MzY3FHSTRfQktySklJNm5NQTZ1RDBiUGNMRGZNYmZnYUtBVFdnNzJrSnN2TzFMOWZNZDhBYm9BQ2pEQTU3bUlBckVCT2w4QzNLM0E1M0dDWkdtQ21ZMDZmZTNha08zNkFrWmdXbEsyQ09XOTRTX0IxeGdXQTNDemVtSmUxQVhPUzRiZ1dNdlFKZHd2R2RmSFZkYjkxZlRKVzhsMmV4UDkyWTZrQldnbERwVXlkSmIzdVRNc2RaVnBiZEFidmdLZVc4bTAwMDAwPz48L2c+PC9zdmc+" class="uml" alt="uml diagram" title="" /></p>
-<h3 id="34">3.4 두께 / 농도 균일도 목표<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
+<p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjb250ZW50U3R5bGVUeXBlPSJ0ZXh0L2NzcyIgZGF0YS1kaWFncmFtLXR5cGU9IkRFU0NSSVBUSU9OIiBoZWlnaHQ9IjI0NnB4IiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiBzdHlsZT0id2lkdGg6MTAzcHg7aGVpZ2h0OjI0NnB4O2JhY2tncm91bmQ6I0ZGRkZGRjsiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwMyAyNDYiIHdpZHRoPSIxMDNweCIgem9vbUFuZFBhbj0ibWFnbmlmeSI+PD9wbGFudHVtbCAxLjIwMjYuNGJldGEyPz48ZGVmcy8+PGc+PCEtLWVudGl0eSBzdWItLT48ZyBjbGFzcz0iZW50aXR5IiBkYXRhLXF1YWxpZmllZC1uYW1lPSJzdWIiIGRhdGEtc291cmNlLWxpbmU9IjMiIGlkPSJlbnQwMDAyIj48cmVjdCBmaWxsPSIjRkZGRkZGIiBoZWlnaHQ9IjMwIiByeD0iMi41IiByeT0iMi41IiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjE7IiB3aWR0aD0iMjAiIHg9IjEyIiB5PSIxMiIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJWZXJkYW5hIiBmb250LXNpemU9IjE0IiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjAiIHg9IjIyIiB5PSIyMiI+U3Vic3RyYXRlICg0JiMxNzY7IG9mZik8L3RleHQ+PC9nPjwhLS1lbnRpdHkgYnVmLS0+PGcgY2xhc3M9ImVudGl0eSIgZGF0YS1xdWFsaWZpZWQtbmFtZT0iYnVmIiBkYXRhLXNvdXJjZS1saW5lPSI0IiBpZD0iZW50MDAwMyI+PHJlY3QgZmlsbD0iI0ZGRkZGRiIgaGVpZ2h0PSIzMCIgcng9IjIuNSIgcnk9IjIuNSIgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxOyIgd2lkdGg9IjIwIiB4PSIxMiIgeT0iMTAyIi8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IlZlcmRhbmEiIGZvbnQtc2l6ZT0iMTQiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMCIgeD0iMjIiIHk9IjExMiI+QnVmZmVyIH4gMSAmIzk1NjttPC90ZXh0PjwvZz48IS0tZW50aXR5IGRyaWZ0LS0+PGcgY2xhc3M9ImVudGl0eSIgZGF0YS1xdWFsaWZpZWQtbmFtZT0iZHJpZnQiIGRhdGEtc291cmNlLWxpbmU9IjUiIGlkPSJlbnQwMDA0Ij48cmVjdCBmaWxsPSIjRkZGRkZGIiBoZWlnaHQ9IjQwIiByeD0iMi41IiByeT0iMi41IiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjE7IiB3aWR0aD0iMjAiIHg9IjEyIiB5PSIxOTIiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iVmVyZGFuYSIgZm9udC1zaXplPSIxNCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIwIiB4PSIyMiIgeT0iMjAyIj5EcmlmdCBMYXllcjwvdGV4dD48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iVmVyZGFuYSIgZm9udC1zaXplPSIxNCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIwIiB4PSIyMiIgeT0iMjEyIj4xMCAmIzk1NjttICgxMjAwVik8L3RleHQ+PC9nPjxnIGNsYXNzPSJlbnRpdHkiIGRhdGEtcXVhbGlmaWVkLW5hbWU9IkdNTjciIGRhdGEtc291cmNlLWxpbmU9IjkiIGlkPSJlbnQwMDA4Ij48cGF0aCBkPSJNNjcuNSwxOTcgTDY3LjUsMjA4IEwzMi4yNywyMTIgTDY3LjUsMjE2IEw2Ny41LDIyNyBBMCwwIDAgMCAwIDY3LjUsMjI3IEw4OC41LDIyNyBBMCwwIDAgMCAwIDg4LjUsMjI3IEw4OC41LDIwNyBMNzguNSwxOTcgTDY3LjUsMTk3IEEwLDAgMCAwIDAgNjcuNSwxOTciIGZpbGw9IiNGRkZGRkYiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MTsiLz48cGF0aCBkPSJNNzguNSwxOTcgTDc4LjUsMjA3IEw4OC41LDIwNyBMNzguNSwxOTciIGZpbGw9IiNGRkZGRkYiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MTsiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iVmVyZGFuYSIgZm9udC1zaXplPSIxMyIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIwIiB4PSI3My41IiB5PSIyMDIiPlN0ZXAtZmxvdyBncm93dGg8L3RleHQ+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IlZlcmRhbmEiIGZvbnQtc2l6ZT0iMTMiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMCIgeD0iNzMuNSIgeT0iMjEyIj5CUEQgJiM4NTk0OyBURUQgY29udmVyc2lvbiBwcmVmZXJyZWQ8L3RleHQ+PC9nPjwhLS1saW5rIHN1YiB0byBidWYtLT48ZyBjbGFzcz0ibGluayIgZGF0YS1lbnRpdHktMT0iZW50MDAwMiIgZGF0YS1lbnRpdHktMj0iZW50MDAwMyIgZGF0YS1saW5rLXR5cGU9ImFzc29jaWF0aW9uIiBkYXRhLXNvdXJjZS1saW5lPSI2IiBpZD0ibG5rNSI+PHBhdGggZD0iTTIyLDQyLjI3IEMyMiw1OC44MiAyMiw4NS4wOCAyMiwxMDEuNjYiIGZpbGw9Im5vbmUiIGlkPSJzdWItYnVmIiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjE7Ii8+PC9nPjwhLS1saW5rIGJ1ZiB0byBkcmlmdC0tPjxnIGNsYXNzPSJsaW5rIiBkYXRhLWVudGl0eS0xPSJlbnQwMDAzIiBkYXRhLWVudGl0eS0yPSJlbnQwMDA0IiBkYXRhLWxpbmstdHlwZT0iYXNzb2NpYXRpb24iIGRhdGEtc291cmNlLWxpbmU9IjciIGlkPSJsbms2Ij48cGF0aCBkPSJNMjIsMTMyLjI2IEMyMiwxNDguNDIgMjIsMTczLjk5IDIyLDE5MS44MSIgZmlsbD0ibm9uZSIgaWQ9ImJ1Zi1kcmlmdCIgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxOyIvPjwvZz48P3BsYW50dW1sLXNyYyBKT3duUlNEMDM0TnhjLUI3YkxDOGE4bkNPMlhUWVcwRUtoYXZNSnBmNDhidHU1NG50QlpxMDlhYTB3Sm8wMXVZYS1IYWZ0MTFXRlh5VkZXRnNqRDhZOEZyUkRBN3ZzWjVaWFd5YW51WThPWnNtR1pqcjc4dDQxUVJnS2FnTFdkQmZfQ3RXZEVGMnpZNEQzTnRzN2ZvWldIN0xCWnlaNVVZY1RtektPanRZWFR4OERib0xTdU9iak1nQkR6bG1kUS1jd241S0xuX3l5cGhCVVVHNnVabFVpcUxfaEVES1lwUzRGUmU5RW9yRC1sTjZoLWRCeG16cnpXNV9ZSDlGWjJZS0V1Y3IxaFk1aEZmM20wMD8+PC9nPjwvc3ZnPg==" class="uml" alt="uml diagram" title="" /></p>
+<h3 id="34-thickness-doping-uniformity-targets">3.4 Thickness / Doping Uniformity Targets<a class="headerlink" href="#34-thickness-doping-uniformity-targets" title="Permanent link">&para;</a></h3>
 <ul>
-<li>두께: <strong>±3 %</strong> (Edge exclusion 5 mm)</li>
-<li>농도: <strong>±10 %</strong></li>
+<li>Thickness: <strong>±3 %</strong> (Edge exclusion 5 mm)</li>
+<li>Doping: <strong>±10 %</strong></li>
 </ul>
-<h2 id="4-aoi-adc">4. 에피 표면 결함 (AOI / ADC 검출 대상)<a class="headerlink" href="#4-aoi-adc" title="Permanent link">&para;</a></h2>
+<h2 id="4-epi-surface-defects-aoi-adc-detection-targets">4. Epi Surface Defects (AOI / ADC Detection Targets)<a class="headerlink" href="#4-epi-surface-defects-aoi-adc-detection-targets" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>결함 모드</th>
-<th>특징</th>
-<th>영향</th>
+<th>Defect Mode</th>
+<th>Characteristic</th>
+<th>Impact</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Carrot</strong></td>
-<td>BPD + TSD 조합 결함, 당근 형태</td>
-<td>Killer (다이오드 Leakage)</td>
+<td>BPD + TSD combined defect, carrot-shaped</td>
+<td>Killer (diode leakage)</td>
 </tr>
 <tr>
 <td><strong>Triangular</strong></td>
-<td>3C polytype 도메인 삽입</td>
+<td>3C polytype domain insertion</td>
 <td>Killer / Slow-Killer</td>
 </tr>
 <tr>
 <td><strong>Comet</strong></td>
-<td>입자 (Particle) 원인 결함</td>
-<td>Particle / Process 이슈</td>
+<td>Particle-induced defect</td>
+<td>Particle / Process issue</td>
 </tr>
 <tr>
 <td><strong>Step Bunching</strong></td>
-<td>표면 step 응집</td>
-<td>Gate Oxide 신뢰성</td>
+<td>Surface step coalescence</td>
+<td>Gate Oxide reliability</td>
 </tr>
 <tr>
 <td><strong>Pit / Pinhole</strong></td>
-<td>표면 함몰 결함</td>
-<td>Killer 가능</td>
+<td>Surface depression</td>
+<td>Potential killer</td>
 </tr>
 <tr>
 <td><strong>Downfall</strong></td>
-<td>챔버 입자 낙하</td>
-<td>Gate Oxide 파괴</td>
+<td>Particle falling from the chamber</td>
+<td>Gate Oxide breakdown</td>
 </tr>
 </tbody>
 </table>
-<p>→ 상세: <a href="../../03-defect/a02-surface/">Part III §A-2 표면 결함</a> · <a href="../../03-defect/a03-trench-subcd/">§A-3 Trench·Sub-CD</a> · <a href="../../03-defect/b05-aoi/">§B-5 AOI</a> · <a href="../../03-defect/b06-adc/">§B-6 ADC</a>.</p>
-<h2 id="5-in-line-end-of-line">5. In-line / End-of-line 측정<a class="headerlink" href="#5-in-line-end-of-line" title="Permanent link">&para;</a></h2>
+<p>→ Details: <a href="../../03-defect/a02-surface/">Part III §A-2 Surface Defects</a> · <a href="../../03-defect/a03-trench-subcd/">§A-3 Trench·Sub-CD</a> · <a href="../../03-defect/b05-aoi/">§B-5 AOI</a> · <a href="../../03-defect/b06-adc/">§B-6 ADC</a>.</p>
+<h2 id="5-in-line-end-of-line-measurement">5. In-line / End-of-line Measurement<a class="headerlink" href="#5-in-line-end-of-line-measurement" title="Permanent link">&para;</a></h2>
 <h3 id="51-in-line">5.1 In-line<a class="headerlink" href="#51-in-line" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>두께</strong> — FTIR 또는 Reflectance Spectroscopy</li>
-<li><strong>농도</strong> — Hg-CV 또는 비접촉 C-V</li>
-<li><strong>표면</strong> — Optical Surface Inspection (KLA Candela, SP3, SICA88 등)</li>
+<li><strong>Thickness</strong> — FTIR or Reflectance Spectroscopy</li>
+<li><strong>Doping</strong> — Hg-CV or non-contact C-V</li>
+<li><strong>Surface</strong> — Optical Surface Inspection (KLA Candela, SP3, SICA88, etc.)</li>
 </ul>
 <h3 id="52-end-of-line">5.2 End-of-line<a class="headerlink" href="#52-end-of-line" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>PL Imaging</strong> — BPD / SF 검출</li>
-<li><strong>KOH Etch</strong> — TED / TSD pit 검출 (sacrificial wafer)</li>
-<li><strong>X-ray Topography</strong> — Substrate 단계 결함 확인</li>
+<li><strong>PL Imaging</strong> — BPD / SF detection</li>
+<li><strong>KOH Etch</strong> — TED / TSD pit detection (sacrificial wafer)</li>
+<li><strong>X-ray Topography</strong> — substrate-stage defect verification</li>
 </ul>
-<h2 id="6">6. 결함 대응 트렌드<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h2 id="6-defect-response-trends">6. Defect Response Trends<a class="headerlink" href="#6-defect-response-trends" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>BPD 수렴 기술</strong> — 에피 성장 조건 최적화로 BPD→TED 전환. 재료 Vendor 가 99 % 이상 보장하는 흐름.</li>
-<li><strong>In-situ Cleaning / Pre-epi 조건</strong> — Carrot 억제에 결정적.</li>
+<li><strong>BPD convergence techniques</strong> — Epi growth conditions optimized to convert BPD → TED. Material vendors increasingly guarantee 99 %+.</li>
+<li><strong>In-situ Cleaning / Pre-epi conditions</strong> — decisive for suppressing carrot defects.</li>
 </ul>
-<h2 id="7-fdc">7. 측정 → FDC 연결<a class="headerlink" href="#7-fdc" title="Permanent link">&para;</a></h2>
+<h2 id="7-measurement-fdc-linkage">7. Measurement → FDC Linkage<a class="headerlink" href="#7-measurement-fdc-linkage" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
-<p class="admonition-title">현장 관점</p>
-<p>SiC 에피 챔버 FDC 운영 시 핵심 모니터링 항목:</p>
+<p class="admonition-title">Field perspective</p>
+<p>Key monitoring items for SiC epi-chamber FDC:</p>
 <ul>
 <li><strong>MFC ratio</strong> (SiH₄ / C₃H₈ / N₂ / H₂)</li>
-<li><strong>Susceptor 온도</strong> (pyrometer)</li>
-<li><strong>Chamber 압력</strong></li>
-<li><strong>Recipe step 별 trace</strong></li>
+<li><strong>Susceptor temperature</strong> (pyrometer)</li>
+<li><strong>Chamber pressure</strong></li>
+<li><strong>Per-recipe-step traces</strong></li>
 </ul>
-<p>AI 이상 감지 적용 시 <strong>graph-based FDC (GNN)</strong> 가 적합 — 챔버 간 cross-correlation 학습 → Tool 특이도 검출.</p>
-<p>참고: <a href="../../04-control-ai/fdc-ai-anomaly/">FDC AI 이상 감지</a> · <a href="../../04-control-ai/fdc-gnn/">GNN 기반 FDC</a>.</p>
+<p>For AI anomaly detection, <strong>graph-based FDC (GNN)</strong> is well-suited — it learns cross-correlations between chambers and detects tool-specific anomalies.</p>
+<p>See: <a href="../../04-control-ai/fdc-ai-anomaly/">FDC AI Anomaly Detection</a> · <a href="../../04-control-ai/fdc-gnn/">GNN-based FDC</a>.</p>
 </div>
-<h2 id="8">8. 참고자료<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<h2 id="8-references">8. References<a class="headerlink" href="#8-references" title="Permanent link">&para;</a></h2>
 <ul>
 <li>T. Kimoto, "Bulk and epitaxial growth of silicon carbide", <em>Prog. Cryst. Growth Charact. Mater.</em></li>
 <li>Aixtron / LPE Epi tool documentation</li>
-<li>KEC SiC Epi Defect 관련 기술 자료</li>
-<li>Wolfspeed · Coherent (구 II-VI) Epi Spec 자료</li>
+<li>KEC SiC Epi Defect technical materials</li>
+<li>Wolfspeed · Coherent (formerly II-VI) Epi spec materials</li>
 </ul>
 <hr />
-<h2 id="2026-05-24">추가 노트 (2026-05-24)<a class="headerlink" href="#2026-05-24" title="Permanent link">&para;</a></h2>
+<h2 id="notes-2026-05-24">Notes (2026-05-24)<a class="headerlink" href="#notes-2026-05-24" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Notion <code>Chapter 2. SiC 웨이퍼 &amp; 에피택셜 성장</code> 본문과 기존 Epi 본문을 통합.</li>
-<li>§4 결함 표는 Notion 의 깨진 행을 재구성하고 누락된 Downfall 추가.</li>
+<li>Merged the Notion <code>Chapter 2. SiC Wafer &amp; Epitaxial Growth</code> content with the existing Epi page.</li>
+<li>The §4 defect table was rebuilt from the broken Notion rows; the missing Downfall row was added.</li>
 </ul>
 
 
@@ -2910,20 +2910,20 @@
     
       
   <span class="md-source-file__fact">
-    <span class="md-icon" title="마지막 업데이트">
+    <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026년 5월 24일 06:58:26 UTC">2026년 5월 24일</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 24, 2026 15:04:24 UTC">May 24, 2026</span>
   </span>
 
     
     
       
   <span class="md-source-file__fact">
-    <span class="md-icon" title="작성일">
+    <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026년 5월 23일 14:52:16 UTC">2026년 5월 23일</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 23, 2026 14:52:16 UTC">May 23, 2026</span>
   </span>
 
     
@@ -2948,7 +2948,7 @@
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  맨위로
+  Back to top
 </button>
         
       </main>
@@ -2957,33 +2957,33 @@
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="하단/푸터" >
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../ch01-material/" class="md-footer__link md-footer__link--prev" aria-label="이전: Ch.1 SiC 재료·결정 기초">
+          <a href="../ch01-material/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Ch.1 SiC Material &amp; Crystal Fundamentals">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                이전
+                Previous
               </span>
               <div class="md-ellipsis">
-                Ch.1 SiC 재료·결정 기초
+                Ch.1 SiC Material & Crystal Fundamentals
               </div>
             </div>
           </a>
         
         
           
-          <a href="../ch03-device/" class="md-footer__link md-footer__link--next" aria-label="다음: Ch.3 SiC 디바이스 구조">
+          <a href="../ch03-device/" class="md-footer__link md-footer__link--next" aria-label="Next: Ch.3 SiC Device Structures">
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                다음
+                Next
               </span>
               <div class="md-ellipsis">
-                Ch.3 SiC 디바이스 구조
+                Ch.3 SiC Device Structures
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3045,7 +3045,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.action.edit", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.action.edit", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
