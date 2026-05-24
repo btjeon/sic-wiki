@@ -2,7 +2,7 @@
 title: Part II. Process & Manufacturing
 ---
 
-# ⚙️ Part II. Process & Manufacturing
+# Part II. Process & Manufacturing
 
 > SiC 디바이스를 **실제로 만드는 공정 흐름**과 산업 컨텍스트.
 > FEOL→BEOL 단위 공정, 그리고 onsemi·BK Factory 같은 SiC 제조 현장 케이스를 매핑한다.

@@ -2,7 +2,7 @@
 title: Part III. SiC Defect Management
 ---
 
-# 📕 Part III. SiC Defect Management
+# Part III. SiC Defect Management
 
 > SiC 결함의 **분류 → 검사 → 관리 → 신뢰성** 4축을 책 형태로 모듈화.
 > 본 섹션은 SiC 제조 현장에서 가장 큰 비중을 차지하는 **결함 관리(Defect Management)** 영역을 독립 트랙으로 다룬다.

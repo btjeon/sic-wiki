@@ -150,19 +150,19 @@ nav:
   - 홈: index.md
   - 소개: about.md
 
-  - 📚 Part I. SiC Foundations:
+  - Part I. SiC Foundations:
       - 개요: 01-foundations/index.md
       - Ch.1 SiC 재료·결정 기초: 01-foundations/ch01-material.md
       - Ch.2 SiC 웨이퍼 & 에피택셜 성장: 01-foundations/ch02-wafer-epi.md
       - Ch.3 SiC 디바이스 구조: 01-foundations/ch03-device.md
 
-  - ⚙️ Part II. Process & Manufacturing:
+  - Part II. Process & Manufacturing:
       - 개요: 02-process/index.md
       - Ch.4 SiC 공정 흐름 (FEOL→BEOL): 02-process/ch04-process-flow.md
       - Ch.5 onsemi SiC 사업·제품·BK Factory: 02-process/ch05-onsemi-bk.md
       - Ch.6 수직계열 통합 공급망 & EV 전략: 02-process/ch06-vertical-integration.md
 
-  - 📕 Part III. SiC Defect Management:
+  - Part III. SiC Defect Management:
       - 개요: 03-defect/index.md
       - A. 결함의 이해:
           - A-1 결함 분류 체계: 03-defect/a01-classification.md
@@ -183,7 +183,7 @@ nav:
           - D-13 BTI & Dynamic Stressing: 03-defect/d13-bti.md
           - D-14 Body Diode & BPD Management: 03-defect/d14-body-diode.md
 
-  - 🔧 Part IV. 공정 제어 & AI 확장:
+  - Part IV. 공정 제어 & AI 확장:
       - 개요: 04-control-ai/index.md
       - Photo 공정:
           - FEOL/BEOL 포토리소그래피: 04-control-ai/photo-feol-beol.md
@@ -198,10 +198,10 @@ nav:
           - 불량 분류 모델: 04-control-ai/ai-defect-classification.md
           - RCA Ontology (PCB→SiC): 04-control-ai/ai-rca-ontology.md
 
-  - 📎 Part V. References:
+  - Part V. References:
       - 자료 색인: 05-references/index.md
-      - 📄 TND6396 — Robust Reliability: 05-references/tnd6396.md
-      - 📄 BRD8094 — Vertical Integration: 05-references/brd8094.md
+      - TND6396 — Robust Reliability: 05-references/tnd6396.md
+      - BRD8094 — Vertical Integration: 05-references/brd8094.md
       - 용어집 (Glossary): 05-references/glossary.md
 
 # -----------------------------------------------------------

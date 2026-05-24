@@ -2,7 +2,7 @@
 title: Part I. SiC Foundations
 ---
 
-# 📚 Part I. SiC Foundations
+# Part I. SiC Foundations
 
 > SiC(Silicon Carbide) 반도체를 이해하기 위한 **재료 · 웨이퍼 · 디바이스** 기초.
 > Si 와의 본질적 차이를 잡고, 결정 결함(BPD/TSD/TED) 과 대표 디바이스 구조(MOSFET/SJ/JBS)를 정리한다.

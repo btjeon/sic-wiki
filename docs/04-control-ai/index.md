@@ -2,7 +2,7 @@
 title: Part IV. 공정 제어 & AI 확장
 ---
 
-# 🔧 Part IV. 공정 제어 & AI 확장
+# Part IV. 공정 제어 & AI 확장
 
 > Si Fab 에서 축적한 **Photo · FDC · Machine Vision · AI** 자산을 SiC 도메인으로 확장하는 트랙.
 > 기존 wiki 의 `02-photolithography/`, `03-fdc-spc/`, `04-ai-applications/` 를 한 섹션으로 통합·재배치했다.

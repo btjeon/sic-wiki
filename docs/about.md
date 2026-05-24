@@ -21,7 +21,7 @@ AX AI Tech Consulting · PM · Inspection PO
 
 ## 기여 / 피드백
 
-- 오타·내용 수정 제안: 각 페이지 우측 상단 ✏️ **연필 아이콘** 클릭 → GitHub에서 직접 PR 가능
+- 오타·내용 수정 제안: 각 페이지 우측 상단 **연필 아이콘** 클릭 → GitHub에서 직접 PR 가능
 - 토론: GitHub Issues
 - 직접 연락: LinkedIn DM
 

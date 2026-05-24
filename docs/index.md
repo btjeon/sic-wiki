@@ -11,11 +11,11 @@ hide:
 
 ---
 
-## 🧭 이 위키의 구성
+## 위키 구성
 
 <div class="grid cards" markdown>
 
--   :material-book-open-variant: **📚 Part I. SiC Foundations**
+-   :material-book-open-variant: **Part I. SiC Foundations**
 
     ---
 
@@ -23,7 +23,7 @@ hide:
 
     [:octicons-arrow-right-24: 바로가기](01-foundations/index.md)
 
--   :material-cog-outline: **⚙️ Part II. Process & Manufacturing**
+-   :material-cog-outline: **Part II. Process & Manufacturing**
 
     ---
 
@@ -31,7 +31,7 @@ hide:
 
     [:octicons-arrow-right-24: 바로가기](02-process/index.md)
 
--   :material-magnify-scan: **📕 Part III. SiC Defect Management**
+-   :material-magnify-scan: **Part III. SiC Defect Management**
 
     ---
 
@@ -39,7 +39,7 @@ hide:
 
     [:octicons-arrow-right-24: 바로가기](03-defect/index.md)
 
--   :material-robot-outline: **🔧 Part IV. 공정 제어 & AI 확장**
+-   :material-robot-outline: **Part IV. 공정 제어 & AI 확장**
 
     ---
 
@@ -47,7 +47,7 @@ hide:
 
     [:octicons-arrow-right-24: 바로가기](04-control-ai/index.md)
 
--   :material-bookshelf: **📎 Part V. References**
+-   :material-bookshelf: **Part V. References**
 
     ---
 
@@ -59,7 +59,7 @@ hide:
 
 ---
 
-## ⚡ SiC가 중요한 이유
+## SiC가 중요한 이유
 
 SiC는 **Si 대비 다음과 같은 물성 우위**를 가집니다:
 
@@ -72,7 +72,7 @@ SiC는 **Si 대비 다음과 같은 물성 우위**를 가집니다:
 
 → EV 인버터, 신재생 에너지 인버터, 산업용 전원에서 Si IGBT를 빠르게 대체 중입니다.
 
-## 🔬 학습 로드맵
+## 학습 로드맵
 
 ```mermaid
 flowchart LR
@@ -84,11 +84,11 @@ flowchart LR
     F --> G["AI 기반 RCA<br/>Ontology"]
 ```
 
-## 📝 최근 업데이트
+## 최근 업데이트
 
 문서 우측 상단 GitHub 아이콘으로 저장소 이동, 각 페이지 하단에서 마지막 수정일을 확인할 수 있습니다.
 
-## 🔗 외부 링크
+## 외부 링크
 
 - **저자 LinkedIn**: [전병탁 (Byoungtak Jeon)](https://www.linkedin.com/in/%EB%B3%91%ED%83%81-%EC%A0%84-8871b8153/)
 - **onsemi SiC 제품군**: <https://www.onsemi.com/products/discrete-power-modules/silicon-carbide-sic>
