@@ -76,12 +76,12 @@ SiC는 **Si 대비 다음과 같은 물성 우위**를 가집니다:
 
 ```mermaid
 flowchart LR
-    A-> B[SiC 물성 이해]
+    A[Start] --> B[SiC 물성 이해]
     B --> C[SiC MOSFET 구조]
     C --> D[SiC Epi/Implant 공정]
     D --> E[FDC/SPC for SiC]
-    E --> F[Machine Vision<br/>SiC 결함 분류]
-    F --> G[AI 기반 RCA<br/>Ontology]
+    E --> F["Machine Vision<br/>SiC 결함 분류"]
+    F --> G["AI 기반 RCA<br/>Ontology"]
 ```
 
 ## 📝 최근 업데이트
