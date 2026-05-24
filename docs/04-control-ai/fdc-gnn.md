@@ -1,33 +1,39 @@
 ---
-title: GNN 기반 FDC
+title: GNN-based FDC
 ---
 
-# GNN 기반 FDC
+# GNN-based FDC
 
-> Graph Deep Neural Network 기반 Fault Detection & Classification (KCS2023). FDC 데이터 그래프 모델링 접근.
+> Graph Deep Neural Network–based Fault Detection & Classification (KCS 2023). A graph-modeling approach to FDC data.
 
-## 1. 핵심 개념
+## 1. Core Idea
 
-> _작성 예정._
+- The detailed case study lives in [FDC AI Anomaly Detection](fdc-ai-anomaly.md).
+- This page collects the **research-positioning, architecture, and external-reference context**.
 
-## 2. Si vs SiC 차이 (해당 시)
+## 2. Si vs SiC
 
-> _작성 예정._
+- **Si fab** — abundant normal and labeled fault data → supervised GNN can be applied immediately.
+- **SiC fab** — relatively little normal data and known-fault labels → use Si fab pre-training + domain adaptation, or transfer-learning combined with one-class anomaly detection.
 
-## 3. 산업 적용 관점
+## 3. Industry View
 
-> _작성 예정 — onsemi · BK Factory 등 공개 케이스 인용._
+- Vendors with strong vertically integrated SiC presence (Wolfspeed, Infineon, STMicro, onsemi) can leverage in-house FDC infrastructure for cross-tool / cross-chamber graph modeling.
+- For domestic Korean fabs, joining external GNN-FDC research collaborations to build labels is a realistic path.
 
-## 4. 결함 / RCA 연결
+## 4. Defect / RCA Links
 
-> _Part III SiC Defect Management 의 어느 챕터와 연결되는지 표시._
+- Output classes can be **directly mapped to A / D-section defects of [Part III](../03-defect/index.md)** (e.g. epi MFC anomaly → Carrot, RF anomaly → Trench sidewall roughness).
+- The RCA Ontology link extends naturally to [RCA Ontology](ai-rca-ontology.md).
 
-## 5. 참고자료
+## 5. References
 
-- (TBD)
+- *Graph Deep Neural Network-based Fault Detection and Classification in Semiconductor Manufacturing*, KCS 2023
+- Velickovic et al., *Graph Attention Networks*, ICLR 2018
+- W. Hamilton, *Graph Representation Learning*, Morgan & Claypool
 
 ---
 
-## 추가 노트 (YYYY-MM-DD)
+## Notes (2026-05-24)
 
-- _학회 · 논문 · 공개 자료 등장 시 누적._
+- Page split from the case-study writeup; the operational case content lives in [FDC AI Anomaly Detection](fdc-ai-anomaly.md).

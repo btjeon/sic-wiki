@@ -1,38 +1,43 @@
+---
+title: ASML / Nikon Tool Matching
+---
+
 # ASML / Nikon Tool Matching
 
-여러 노광기(scanner)에 동일 layer를 흘릴 때, **CD / Overlay / Focus / Dose**를 통계적으로 일치시키는 작업.
+The work of statistically aligning **CD / Overlay / Focus / Dose** when running the same layer across multiple scanners.
 
-## 1. 왜 Tool Matching이 필요한가
+## 1. Why Tool Matching Is Needed
 
 ```mermaid
 flowchart LR
-    A[Tool A<br/>ASML PAS5500] --> Z[같은 layer]
+    A[Tool A<br/>ASML PAS5500] --> Z[Same layer]
     B[Tool B<br/>Nikon NSR-S205] --> Z
     C[Tool C<br/>ASML XT:1400] --> Z
-    Z --> Y{CD/OL이<br/>동일해야 함}
+    Z --> Y{CD / OL must<br/>be identical}
 ```
 
-Tool 간 격차가 크면:
-- Lot 흐름 제약 (특정 tool 전용 layer 발생)
-- Yield 산포 증가
-- WIP 관리 복잡
+Large tool-to-tool gaps cause:
 
-→ 목표: **Matched group** 안에서 lot 자유 흐름 + 동일 SPEC
+- Lot-flow restrictions (layers become tool-specific)
+- Wider yield distribution
+- Complex WIP management
 
-## 2. 매칭 항목
+→ Goal: free lot flow within a **matched group** with identical SPEC.
+
+## 2. Matching Items
 
 ### 2.1 Dose Matching
 
-각 tool에서 동일 target CD를 얻기 위한 **dose offset** 보정.
+Correct the **dose offset** required at each tool to hit the same target CD.
 
 ```python
-# 의사 코드 — 실측 기반 dose offset 도출
+# Pseudocode — derive dose offset from measurement
 import numpy as np
 
 target_cd = 350  # nm
 for tool in tools:
     dose_series = [...]      # 25 mJ/cm² ~ 35 mJ/cm² sweep
-    cd_series   = [...]      # 측정 CD
+    cd_series   = [...]      # measured CD
     slope, intercept = np.polyfit(dose_series, cd_series, 1)
     dose_for_target = (target_cd - intercept) / slope
     tool.dose_offset = dose_for_target - reference_tool.dose
@@ -40,83 +45,81 @@ for tool in tools:
 
 ### 2.2 Focus Matching
 
-Best focus는 tool마다 다름. **FEM (Focus-Exposure Matrix)** 으로 도출:
-- X축: dose (5~7 points)
-- Y축: focus (-0.3 ~ +0.3 μm, 7 points)
-- Bossung curve → best focus / focus latitude 추출
+Best focus differs per tool. Derived from the **FEM (Focus-Exposure Matrix)**:
+
+- X axis: dose (5~7 points)
+- Y axis: focus (−0.3 ~ +0.3 μm, 7 points)
+- Bossung curve → best focus / focus latitude extraction
 
 ### 2.3 Overlay Matching
 
-각 tool의 **distortion fingerprint** (intra-field + inter-field) 보정:
+Correct each tool's **distortion fingerprint** (intra-field + inter-field):
 
-\[
-\text{Overlay} = T + R + M + \text{higher order}
-\]
+$$\text{Overlay} = T + R + M + \text{higher order}$$
 
-- T (translation), R (rotation), M (magnification): 1차 grid 보정
-- 3차/5차 distortion: **CPE (Correctable Per Exposure)** 적용
+- T (translation), R (rotation), M (magnification): primary grid corrections
+- 3rd / 5th-order distortion: apply **CPE (Correctable Per Exposure)**
 
 ### 2.4 CD Uniformity Matching
 
-각 tool의 **slit signature** (X 방향 illumination 균일도) 보정.
-ASML CDU correction (DoseMapper) / Nikon Dose Map 사용.
+Correct each tool's **slit signature** (X-direction illumination uniformity).
+Use ASML CDU correction (DoseMapper) / Nikon Dose Map.
 
-## 3. 매칭 워크플로 (현장 적용 방법)
+## 3. Matching Workflow (field-applied method)
 
 ```mermaid
 flowchart TD
-    A[Reference Tool 선정<br/>가장 안정/장비 새 것] --> B[Test reticle 노광<br/>FEM + Overlay]
-    B --> C[측정 — CD-SEM, Overlay TM]
-    C --> D[데이터 분석<br/>R / Python]
-    D --> E[Tool별 offset 적용]
-    E --> F[검증 노광 — confirm wafer]
-    F --> G{스펙 통과?}
+    A[Pick reference tool<br/>most stable or newest] --> B[Expose test reticle<br/>FEM + Overlay]
+    B --> C[Measure — CD-SEM, Overlay TM]
+    C --> D[Data analysis<br/>R / Python]
+    D --> E[Apply per-tool offset]
+    E --> F[Verification exposure — confirm wafer]
+    F --> G{Within spec?}
     G -- No --> D
-    G -- Yes --> H[Production 적용]
-    H --> I[월간 health check]
+    G -- Yes --> H[Production deployment]
+    H --> I[Monthly health check]
 ```
 
-## 4. SPC 관리
+## 4. SPC Monitoring
 
-매칭 후에는 정기적으로 **drift**를 감시:
+After matching, monitor **drift** on a cadence:
 
-| Metric | Frequency | Limit (예시) |
-|--------|-----------|--------------|
-| Dose accuracy | Daily | ±0.3% |
+| Metric | Frequency | Limit (example) |
+|--------|-----------|-----------------|
+| Dose accuracy | Daily | ±0.3 % |
 | Focus accuracy | Weekly | ±15 nm |
 | Overlay (matched) | Daily | < 8 nm (mean) |
 | CDU (slit) | Weekly | 3σ < 4 nm |
 
-이상 발생 → FDC alert → engineer 분석.
+Anomaly → FDC alert → engineer analysis.
 
-## 5. SiC에서의 추가 고려사항
+## 5. SiC-specific Considerations
 
-!!! experience "현장 노트"
-    Si Photo Tool Matching Manager 경험상 TSMC, TI의 매칭 방법론을 벤치마킹했습니다.
-    SiC에 적용 시 다음 변수가 추가됩니다.
+!!! note "Field note"
+    From experience as a Si Photo Tool Matching Manager, TSMC and TI matching methodologies were used as benchmarks. Applying the same to SiC adds the following variables.
 
-    1. **Wafer warpage** (Bow ±50 μm)
-        - Leveling system이 capture 가능한 범위 확인
-        - Tool 간 leveling sensor 차이가 overlay에 더 큰 영향
+    1. **Wafer warpage** (bow ±50 μm)
+        - Confirm the leveling system's capture range.
+        - Leveling-sensor differences between tools have a larger effect on overlay.
 
     2. **Backside cleanness**
-        - SiC 입자가 chuck에 부착 → wafer가 기울어짐
-        - Tool 간 chuck cleaning 주기 일치 필수
+        - SiC particles can adhere to the chuck → wafer tilts.
+        - Chuck-cleaning intervals must be aligned across tools.
 
-    3. **Implant 후 wafer stress**
-        - High dose Al implant 후 wafer stress 분포
-        - Tool마다 distortion 응답이 미세하게 다름
+    3. **Post-implant wafer stress**
+        - Stress distribution after high-dose Al implant.
+        - Tools respond to distortion slightly differently.
 
-    → **Pre-treatment (chuck clean, warpage screen)** 을 매칭 변수에 포함시키는 것이 중요.
+    → It is important to fold **pre-treatment (chuck clean, warpage screen)** into matching variables.
 
-## 6. 통계 도구
+## 6. Statistical Tools
 
 - **R** + ggplot2 + lme4 (mixed-effect model)
-- **Python** + pandas + statsmodels + JMP-style 분석
-- 사내 자동화: SPC Weco rule (자세한 내용 → [Weco Rule 설계](fdc-weco-rules.md))
+- **Python** + pandas + statsmodels + JMP-style analysis
+- In-house automation: SPC WECO rules (details → [WECO Rule Design](fdc-weco-rules.md))
 
-## 7. 참고 자료
+## 7. References
 
-- ASML / Nikon Application Notes (Internal)
-- SPIE Advanced Lithography — Tool Matching Sessions
-- 저자 사내 발표: "BEOL MTL Layer Alignment & Overlay Stabilization" (DB HiTek 사내 논문상, 2006.11)
+- ASML / Nikon Application Notes (internal)
+- SPIE Advanced Lithography — Tool Matching sessions
+- Author internal talk: "BEOL MTL Layer Alignment & Overlay Stabilization" (DB HiTek in-house paper award, 2006-11)

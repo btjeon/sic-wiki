@@ -1,31 +1,36 @@
-# FDC AI 이상 감지 적용 사례
+---
+title: FDC AI Anomaly Detection — Case Study
+---
 
-저자가 DB HiTek Fab Innovation Team에서 수행한 **Graph Deep Neural Network 기반 FDC 이상 감지** 적용 사례 정리.
-관련 논문: *"Graph Deep Neural Network-based Fault Detection and Classification in Semiconductor Manufacturing"* (KCS 2023)
+# FDC AI Anomaly Detection — Case Study
 
-## 1. 배경 / 문제 정의
+A case write-up of the **Graph Deep Neural Network–based FDC anomaly detection** that the author led at DB HiTek's Fab Innovation Team.
+Related paper: *"Graph Deep Neural Network-based Fault Detection and Classification in Semiconductor Manufacturing"* (KCS 2023).
 
-기존 FDC:
-- Univariate SPC 기반 → trace의 풍부한 정보 활용 어려움
-- Recipe step별 mean/min/max 같은 summary feature만 사용
-- 챔버 간 cross-correlation 미반영
+## 1. Background / Problem Statement
+
+Existing FDC:
+
+- Univariate SPC base → cannot exploit the richness of the trace.
+- Only summary features per recipe step (mean / min / max).
+- No cross-correlation between chambers.
 
 ```mermaid
 flowchart LR
-    A[Trace 다채널<br/>온도/압력/MFC/RF/...] --> B[Step별 summary]
-    B --> C[1D Univariate SPC]
+    A[Multi-channel trace<br/>temperature/pressure/MFC/RF/...] --> B[Per-step summary]
+    B --> C[1D univariate SPC]
     C --> D[Alert]
-    D --> E[Engineer 분석<br/>병목]
+    D --> E[Engineer analysis<br/>bottleneck]
 ```
 
-## 2. GNN 접근
+## 2. The GNN Approach
 
-장비를 **그래프**로 모델링:
+Model the tool as a **graph**:
 
-- **Node**: 챔버 내 센서 (온도, 압력, MFC, RF, ...)
-- **Edge**: 센서 간 물리적/공정적 상관관계
-- **Node feature**: 시계열 trace embedding (CNN/LSTM)
-- **Graph feature**: 챔버 전체 signature
+- **Node** — chamber sensors (temperature, pressure, MFC, RF, ...)
+- **Edge** — physical / process correlations between sensors
+- **Node feature** — time-series trace embedding (CNN / LSTM)
+- **Graph feature** — full-chamber signature
 
 ```plantuml
 @startuml
@@ -46,52 +51,53 @@ m1 -- m2 : ratio
 @enduml
 ```
 
-## 3. 모델 구조
+## 3. Model Architecture
 
 ```mermaid
 flowchart LR
-    A[Raw trace<br/>multi-sensor] --> B[Per-sensor CNN1D<br/>embed]
+    A[Raw trace<br/>multi-sensor] --> B[Per-sensor CNN1D<br/>embedding]
     B --> C[Graph Attention<br/>GAT layers]
     C --> D[Graph pool]
     D --> E[Classifier head]
     E --> F[Normal /<br/>Fault class 1~k]
 ```
 
-핵심:
-- **Per-sensor embedding**: 각 trace를 fixed-length vector로 인코딩
-- **Graph Attention**: 센서 간 중요도를 학습으로 결정
-- **Multi-task**: anomaly detection + 원인 클래스 분류 동시
+Key points:
 
-## 4. 학습 데이터
+- **Per-sensor embedding** — encode each trace into a fixed-length vector.
+- **Graph Attention** — learn per-sensor importance.
+- **Multi-task** — anomaly detection + cause-class classification jointly.
 
-| 데이터 | 출처 | 규모 |
-|--------|------|------|
-| Normal | 사내 FDC log (1년) | ~50,000 runs |
-| Known fault | RCA case 기반 라벨링 | ~3,000 runs |
-| Synthetic fault | physics-based injection | ~5,000 runs |
+## 4. Training Data
 
-라벨링은 PM(Preventive Maintenance) 로그와 결합해 자동화.
+| Data | Source | Volume |
+|------|--------|--------|
+| Normal | In-house FDC log (1 year) | ~50,000 runs |
+| Known fault | RCA-case-labeled | ~3,000 runs |
+| Synthetic fault | Physics-based injection | ~5,000 runs |
 
-## 5. 결과 (DB HiTek 사례 기반)
+Labeling automated by joining with PM (Preventive Maintenance) logs.
+
+## 5. Results (DB HiTek case)
 
 | Metric | Univariate SPC | GNN FDC |
 |--------|----------------|---------|
 | Detection latency | run+1 | real-time |
 | Recall (known fault) | 0.68 | 0.93 |
 | Precision | 0.55 | 0.86 |
-| Engineer 분석 시간 | 30~60 min/case | ~5 min |
+| Engineer-analysis time | 30~60 min/case | ~5 min |
 
-## 6. SiC 공정에 적용 시 고려사항
+## 6. SiC-process Considerations
 
-!!! experience "현장 노트"
-    SiC 신규 공정 (epi, 1700℃ anneal, NO 어닐링) 은 **정상 데이터 자체가 부족**.
-    Si fab의 GNN FDC 패턴을 그대로 transfer 하려면 다음이 필요합니다.
+!!! note "Field note"
+    SiC's newer processes (epi, 1700 ℃ anneal, NO anneal) suffer from **a shortage of normal data itself**.
+    To transfer Si-fab GNN-FDC patterns directly the following is required.
 
-    1. **Domain adaptation**: Si fab pre-train → SiC fab fine-tune
-    2. **One-class / contrastive learning**: 정상만으로 학습하는 접근
-    3. **Physics-informed**: epi의 mass balance / energy balance 제약을 loss에 포함
+    1. **Domain adaptation** — pre-train on Si fab → fine-tune on SiC fab.
+    2. **One-class / contrastive learning** — train using only normal data.
+    3. **Physics-informed** — fold epi mass-balance / energy-balance constraints into the loss.
 
-## 7. 시스템 통합 흐름
+## 7. System Integration Flow
 
 ```mermaid
 flowchart LR
@@ -100,15 +106,15 @@ flowchart LR
     C --> D[GNN inference service]
     D --> E[MES alert]
     E --> F[Engineer dashboard]
-    D --> G[RCA Ontology<br/>원인 추적]
+    D --> G[RCA Ontology<br/>cause tracking]
 ```
 
-- RCA Ontology와 연결되면 "어떤 sensor가 어떤 결함을 유발했는가" 까지 자동 추정 가능
-- PCB Root Cause Analysis ontology 설계 경험 (저자 현 INTERX 업무)을 SiC fab에 응용 가능
+- Once connected to the RCA Ontology, the system can auto-estimate "which sensor caused which defect."
+- The author's PCB Root-Cause-Analysis ontology design experience (current INTERX work) transfers to a SiC fab.
 
-## 8. 참고 자료
+## 8. References
 
-- 저자 논문: *Graph Deep Neural Network-based Fault Detection and Classification in Semiconductor Manufacturing*, KCS 2023
+- Author's paper: *Graph Deep Neural Network-based Fault Detection and Classification in Semiconductor Manufacturing*, KCS 2023
 - Velickovic et al., *Graph Attention Networks*, ICLR 2018
-- Aibiz FDC AI 협업 사례 (사내)
-- SECS/GEM standards (SEMI)
+- Aibiz FDC-AI collaboration case (in-house)
+- SECS / GEM standards (SEMI)

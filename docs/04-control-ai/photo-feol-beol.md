@@ -1,85 +1,88 @@
-# FEOL / BEOL 포토리소그래피
+---
+title: FEOL / BEOL Photolithography
+---
 
-## 1. Layer Stack 개요
+# FEOL / BEOL Photolithography
 
-SiC Power MOSFET Photo Layer 구성 예시 (Planar 기준):
+## 1. Layer-Stack Overview
 
-| Layer | 종류 | 노광기 | 해상도 목표 | 비고 |
-|-------|------|-------|------------|------|
-| Align Mark | FEOL | i-line | 1.0 μm | 1700℃ anneal 견딤 |
+Representative SiC Power MOSFET photo-layer composition (Planar):
+
+| Layer | Type | Scanner | Resolution target | Notes |
+|-------|------|---------|-------------------|-------|
+| Align Mark | FEOL | i-line | 1.0 μm | Survives 1700 ℃ anneal |
 | P-well | FEOL | i-line / KrF | 0.5~1.0 μm | Al implant mask |
 | N+ Source | FEOL | KrF | 0.4 μm | P/N₂ implant |
-| Gate Poly | FEOL | KrF | 0.35 μm | Trench는 더 좁음 |
+| Gate Poly | FEOL | KrF | 0.35 μm | Trench is even narrower |
 | Contact | FEOL | KrF | 0.4 μm | Selective etch |
-| M1 | BEOL | KrF / i-line | 0.5 μm | 두꺼운 Al 또는 Cu |
+| M1 | BEOL | KrF / i-line | 0.5 μm | Thick Al or Cu |
 | Via | BEOL | i-line | 1.0 μm | |
 | Pad | BEOL | i-line | 5 μm | Bonding pad |
 
-## 2. FEOL — 핵심 Layer
+## 2. FEOL — Key Layers
 
 ### 2.1 Alignment Mark
 
-- 1700℃ activation anneal을 견뎌야 함
-- **Carbon cap (1~2 μm)** 또는 **deep trench + refilled SiO₂** 구조 사용
-- AML mark + Box-in-Box overlay mark 분리
+- Must survive 1700 ℃ activation anneal
+- Uses a **carbon cap (1~2 μm)** or a **deep trench refilled with SiO₂** structure
+- Separate AML mark + Box-in-Box overlay mark
 
 ### 2.2 P-well Implant Mask
 
-- Al implant (heavy, deep) → 두꺼운 mask 필요
-- 일반적으로 **SiO₂ 2~3 μm** Hard mask + PR
-- High dose (1e14~1e15 cm⁻²) → resist alone은 부족
+- Al implant (heavy, deep) → requires a thick mask
+- Typically a stack of **SiO₂ 2~3 μm** hard mask + PR
+- High dose (1e14~1e15 cm⁻²) — PR alone is insufficient
 
 ### 2.3 Gate Poly
 
-- Trench MOSFET의 경우 **trench top corner** 노광이 가장 까다로움
-- KrF 248nm + 좁은 DOF 관리
-- Gate length 균일도가 Vth 분포에 직결
+- For Trench MOSFETs the **trench top corner** is the most demanding exposure
+- KrF 248 nm with tight DOF management
+- Gate-length uniformity directly drives the $V_{th}$ distribution
 
-## 3. BEOL — Power 디바이스 특이사항
+## 3. BEOL — Power-Device Specifics
 
-### 3.1 두꺼운 Metal
+### 3.1 Thick Metal
 
-SiC 전력 소자는 **Power loop** 손실 최소화를 위해 두꺼운 Al(~5 μm) 또는 Cu(~10 μm) 사용.
+SiC power devices use thick Al (~5 μm) or Cu (~10 μm) to minimize **power-loop** loss.
 
-- 두꺼운 metal → 두꺼운 PR → 더 큰 DOF 필요
-- **Multiple coating** 또는 **dry film resist** 활용
+- Thicker metal → thicker PR → larger DOF requirement
+- **Multiple coating** or **dry-film resist** techniques
 
 ### 3.2 Pad / Polyimide
 
-- Bonding pad 5×5 μm 또는 wire/clip bond용 큰 pad
-- Polyimide passivation은 stress 관리 (SiC 박편 wafer warpage 가속)
+- Bonding pads at 5 × 5 μm or larger pads for wire / clip bonding
+- Polyimide passivation requires stress management (accelerates warpage of thinned SiC wafers)
 
-## 4. 노광 조건 도출 (예시)
+## 4. Exposure-Condition Derivation (example)
 
-KrF (λ=248nm) gate poly 0.35 μm 노광 조건 도출:
+KrF (λ = 248 nm) gate poly 0.35 μm derivation:
 
-\[
-CD = k_1 \cdot \frac{\lambda}{NA}, \quad DOF = k_2 \cdot \frac{\lambda}{NA^2}
-\]
+$$CD = k_1 \cdot \frac{\lambda}{NA}, \quad DOF = k_2 \cdot \frac{\lambda}{NA^2}$$
 
-| 항목 | 값 |
+| Item | Value |
 |------|----|
 | Wavelength λ | 248 nm |
 | NA | 0.68 |
-| Sigma (annular) | 0.85/0.55 |
+| Sigma (annular) | 0.85 / 0.55 |
 | Target CD | 0.35 μm |
 | k₁ | 0.96 |
 | Theoretical DOF | ~0.54 μm |
 
-→ 실제 DOF는 PR thickness, BARC 두께, wafer flatness에 따라 줄어듦.
-SiC wafer warpage 환경에서는 **focus margin 30% 이상** 확보 권장.
+→ Real DOF shrinks with PR thickness, BARC thickness, and wafer flatness.
+Under SiC wafer warpage, securing a **focus margin of at least 30 %** is recommended.
 
 ## 5. CD / Overlay Control
 
-### 5.1 CD 균일도 (CDU)
+### 5.1 CD Uniformity (CDU)
 
-목표: 3σ < CD × 10%
+Target: 3σ < CD × 10 %.
 
-영향 인자:
-- **Dose uniformity**: scanner illumination 균일도
-- **Focus uniformity**: wafer flatness, leveling system
-- **PR thickness uniformity**: track coating
-- **Etch bias variation**: 후공정 영향
+Influencing factors:
+
+- **Dose uniformity** — scanner illumination uniformity
+- **Focus uniformity** — wafer flatness, leveling system
+- **PR-thickness uniformity** — track coating
+- **Etch-bias variation** — downstream impact
 
 ### 5.2 Overlay
 
@@ -90,18 +93,18 @@ SiC wafer warpage 환경에서는 **focus margin 30% 이상** 확보 권장.
 | Contact ↔ Gate | < 40 nm |
 | M1 ↔ Contact | < 60 nm |
 
-→ Tool 간 matching이 핵심. 상세: [Tool Matching](photo-tool-matching.md)
+→ Tool-to-tool matching is critical. Details: [Tool Matching](photo-tool-matching.md).
 
-## 6. Photoresist 선택
+## 6. Photoresist Selection
 
-| 적용 | 종류 | 두께 | 비고 |
-|------|------|------|------|
-| FEOL 고해상도 | KrF chemically amplified | 0.5~0.8 μm | TARC/BARC 병용 |
-| Implant mask | i-line novolac | 2~5 μm | Hard mask와 stack |
+| Application | Type | Thickness | Notes |
+|-------------|------|-----------|-------|
+| FEOL high resolution | KrF chemically amplified | 0.5~0.8 μm | Use with TARC / BARC |
+| Implant mask | i-line novolac | 2~5 μm | Stack with hard mask |
 | Thick metal | i-line thick film | 5~15 μm | Multi-coat |
-| Polyimide | PI 자체가 photo definable | 5~20 μm | UV i-line cure |
+| Polyimide | Photo-definable PI itself | 5~20 μm | UV i-line cure |
 
-## 7. 참고 자료
+## 7. References
 
 - C. Mack, *Fundamental Principles of Optical Lithography*, Wiley
 - SPIE Advanced Lithography Conference Proceedings

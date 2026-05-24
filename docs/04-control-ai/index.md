@@ -1,31 +1,31 @@
 ---
-title: Part IV. 공정 제어 & AI 확장
+title: Part IV. Process Control & AI Extension
 ---
 
-# Part IV. 공정 제어 & AI 확장
+# Part IV. Process Control & AI Extension
 
-> Si Fab 에서 축적한 **Photo · FDC · Machine Vision · AI** 자산을 SiC 도메인으로 확장하는 트랙.
-> 기존 wiki 의 `02-photolithography/`, `03-fdc-spc/`, `04-ai-applications/` 를 한 섹션으로 통합·재배치했다.
+> A track that extends the **Photo · FDC · Machine Vision · AI** assets built up in Si fabs into the SiC domain.
+> Consolidates the previous wiki sections (`02-photolithography/`, `03-fdc-spc/`, `04-ai-applications/`) into one place.
 
-## Photo 공정
+## Photo Process
 
-- **[FEOL/BEOL 포토리소그래피](photo-feol-beol.md)**
-- **[OPC 마스크 설계](photo-opc.md)**
+- **[FEOL/BEOL Photolithography](photo-feol-beol.md)**
+- **[OPC Mask Design](photo-opc.md)**
 - **[ASML/Nikon Tool Matching](photo-tool-matching.md)**
 
 ## FDC / SPC
 
-- **[Weco Rule 설계](fdc-weco-rules.md)**
-- **[FDC AI 이상 감지 사례](fdc-ai-anomaly.md)**
-- **[GNN 기반 FDC](fdc-gnn.md)** *(KCS2023 — Graph Deep Neural Network 기반 Fault Detection & Classification)*
+- **[WECO Rule Design](fdc-weco-rules.md)**
+- **[FDC AI Anomaly Detection](fdc-ai-anomaly.md)**
+- **[GNN-based FDC](fdc-gnn.md)** *(KCS 2023 — Graph Deep Neural Network-based Fault Detection & Classification)*
 
 ## Machine Vision & AI
 
-- **[머신비전 적용 (WCMP 등)](ai-machine-vision.md)**
-- **[불량 분류 모델](ai-defect-classification.md)**
-- **[RCA Ontology (PCB→SiC 확장)](ai-rca-ontology.md)**
+- **[Machine Vision (WCMP, etc.)](ai-machine-vision.md)**
+- **[Defect Classification Model](ai-defect-classification.md)**
+- **[RCA Ontology (PCB → SiC extension)](ai-rca-ontology.md)**
 
-## Cross-link
+## Cross-links
 
-- AOI / ADC / Klarity 같은 **결함 관리 도구·AI 운영**은 **[Part III. SiC Defect Management](../03-defect/index.md)** B 섹션 참고.
-- SiC 본질·디바이스 이해는 **[Part I. SiC Foundations](../01-foundations/index.md)**.
+- For **defect-management tools and AI operations** such as AOI / ADC / Klarity, see Section B of **[Part III. SiC Defect Management](../03-defect/index.md)**.
+- For SiC fundamentals and device understanding, see **[Part I. SiC Foundations](../01-foundations/index.md)**.

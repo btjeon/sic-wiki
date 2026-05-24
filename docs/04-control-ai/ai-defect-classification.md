@@ -1,17 +1,21 @@
-# 불량 분류 모델
+---
+title: Defect Classification Model
+---
 
-SiC wafer / die 단위 결함을 분류하는 모델 설계 노트.
+# Defect Classification Model
 
-## 1. 문제 정의 매트릭스
+Design notes for a model that classifies SiC wafer / die-level defects.
 
-| Granularity | 입력 | 클래스 수 | 모델 후보 |
-|-------------|------|----------|----------|
-| Wafer map | W×H bin map | 5~10 (radial/ring/edge/scratch/...) | CNN, ViT |
-| Die patch | 256×256 image | 10~30 | EfficientNet, Swin |
-| Pixel mask | full image | per-pixel multiclass | U-Net++, SegFormer |
-| Time-series | trace | 2 (normal/fault) | LSTM, Transformer |
+## 1. Problem-Definition Matrix
 
-## 2. 추천 모델 흐름
+| Granularity | Input | Classes | Candidate models |
+|-------------|-------|---------|------------------|
+| Wafer map | W × H bin map | 5~10 (radial / ring / edge / scratch / ...) | CNN, ViT |
+| Die patch | 256 × 256 image | 10~30 | EfficientNet, Swin |
+| Pixel mask | Full image | per-pixel multi-class | U-Net++, SegFormer |
+| Time-series | Trace | 2 (normal / fault) | LSTM, Transformer |
+
+## 2. Recommended Model Flow
 
 ```mermaid
 flowchart LR
@@ -22,88 +26,89 @@ flowchart LR
     C --> F[Head 3: Embedding<br/>for future similarity]
 ```
 
-**Multi-head 추천 이유**:
-1. Classification head — 표준 라벨 예측
-2. Confidence head — uncertainty estimation, 인간 검토 라우팅
-3. Embedding head — 신규 결함 발견 시 유사 사례 검색
+**Why multi-head**:
 
-## 3. 학습 전략
+1. **Classification head** — standard label prediction.
+2. **Confidence head** — uncertainty estimation, route to human review.
+3. **Embedding head** — similarity search when new defects are found.
 
-### 3.1 데이터 부족 환경
+## 3. Training Strategy
 
-SiC 신규 공정은 라벨 데이터 부족 → 다음 조합:
+### 3.1 Data-scarce environment
 
-- **Self-supervised pre-training**: SimCLR, DINOv2로 unlabeled wafer image 활용
-- **Few-shot fine-tune**: 라벨 100~1000개로 미세 조정
-- **Class balancing**: focal loss + weighted sampling
+SiC newer processes lack labeled data → combine the following:
+
+- **Self-supervised pre-training** — SimCLR, DINOv2 to exploit unlabeled wafer images.
+- **Few-shot fine-tune** — fine-tune with 100~1,000 labels.
+- **Class balancing** — focal loss + weighted sampling.
 
 ### 3.2 Continual Learning
 
-신규 결함이 발견될 때마다 재학습:
+Re-train whenever a new defect is found:
 
 ```mermaid
 flowchart LR
-    A[Production 결과] --> B[Confidence < 0.7]
-    B --> C[Engineer 라벨링]
-    C --> D[Labeled pool 추가]
-    D --> E[주간 재학습]
-    E --> F[Shadow eval<br/>비교 vs 현 모델]
-    F --> G{개선?}
-    G -- Yes --> H[배포]
-    G -- No --> I[원인 분석]
+    A[Production result] --> B[Confidence < 0.7]
+    B --> C[Engineer labeling]
+    C --> D[Add to labeled pool]
+    D --> E[Weekly re-training]
+    E --> F[Shadow eval<br/>vs current model]
+    F --> G{Improved?}
+    G -- Yes --> H[Deploy]
+    G -- No --> I[Root-cause analysis]
 ```
 
 ### 3.3 Out-of-distribution Detection
 
-미지의 결함이 들어왔을 때 강건하게 대응:
+Robust handling when unseen defects arrive:
 
-- **Mahalanobis distance** on feature space
-- **Energy-based OOD**: free energy 계산
-- Confidence가 낮으면 **"Unknown" 클래스로 분리** → engineer 검토 강제
+- **Mahalanobis distance** on the feature space
+- **Energy-based OOD** — free-energy computation
+- On low confidence, route to an **"Unknown" class** → force engineer review
 
-## 4. 평가 (양산용)
+## 4. Evaluation (production-grade)
 
-| 지표 | 정의 | 목표 |
-|------|------|------|
-| Macro F1 | 클래스 평균 F1 | > 0.85 |
-| Worst-class recall | 가장 약한 클래스 | > 0.7 |
-| FAR @ 95% recall | False Alarm Rate | < 5% |
+| Metric | Definition | Target |
+|--------|-----------|--------|
+| Macro F1 | Mean F1 across classes | > 0.85 |
+| Worst-class recall | Weakest class | > 0.7 |
+| FAR @ 95 % recall | False Alarm Rate | < 5 % |
 | OOD AUROC | OOD vs ID | > 0.9 |
-| Engineer agreement | 사람과 일치율 | > 0.9 |
+| Engineer agreement | Match with humans | > 0.9 |
 
-## 5. 모델 카드 (배포 시 작성)
+## 5. Model Card (write at deployment)
 
-배포 모델마다 다음 문서를 동봉:
+Attach the following document to every deployed model:
 
 ```
-- 모델 이름 / 버전 / 학습일
-- 학습 데이터: 출처 / 규모 / 라벨링 방법
-- 평가 데이터: train과 분리된 holdout 명세
-- 성능: per-class metric + worst-case
-- 제약 사항: 어떤 wafer/공정 조건에서 검증되지 않음
-- 알려진 실패 사례: 어떤 결함을 잘못 분류하는지
-- 책임자 / 연락처
+- Model name / version / training date
+- Training data: source / size / labeling method
+- Eval data: holdout specification (separated from train)
+- Performance: per-class metric + worst case
+- Constraints: wafer / process conditions not validated
+- Known failure cases: which defects are misclassified
+- Owner / contact
 ```
 
-## 6. RCA Ontology 연계
+## 6. RCA Ontology Linkage
 
-결함 분류 결과를 **공정 trace + 신뢰성 결과** 와 연결:
+Connect the classifier output to **process trace + reliability results**:
 
 ```mermaid
 flowchart LR
     A[Defect class] --> B[Wafer ID / die location]
-    B --> C[FDC trace<br/>해당 lot의 epi/photo/anneal 데이터]
-    B --> D[신뢰성 시험 결과<br/>BV / Ron / TDDB]
+    B --> C[FDC trace<br/>lot's epi/photo/anneal data]
+    B --> D[Reliability test result<br/>BV / Ron / TDDB]
     C --> E[RCA Ontology]
     D --> E
-    E --> F[원인 → 결함 → 신뢰성 영향<br/>knowledge graph]
+    E --> F[Cause → defect → reliability impact<br/>knowledge graph]
 ```
 
-→ 저자의 PCB Root Cause Analysis ontology 설계 경험(INTERX 현 업무)을 SiC 도메인으로 그대로 확장.
+→ The author's PCB Root-Cause-Analysis ontology design experience (current INTERX work) extends naturally to SiC.
 
-## 7. 참고 자료
+## 7. References
 
 - Tan & Le, *EfficientNet*, ICML 2019
 - Liu et al., *Swin Transformer*, ICCV 2021
 - Hendrycks & Gimpel, *Baseline for Detecting Misclassified and OOD Examples*, ICLR 2017
-- 저자 사례: WCMP MV 분류 모델 운영 (DB HiTek)
+- Author's case: WCMP MV classification model operation (DB HiTek)

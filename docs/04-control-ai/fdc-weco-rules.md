@@ -1,77 +1,82 @@
-# Weco Rule 설계
+---
+title: WECO Rule Design
+---
 
-**Western Electric Rule (Weco rule)** 은 SPC 차트에서 이상 패턴을 검출하는 8가지 표준 룰.
-사내 운영 시에는 표준 룰 + 도메인 특화 확장 룰을 함께 운영합니다.
+# WECO Rule Design
 
-## 1. 표준 Western Electric Rules
+The **Western Electric Rules (WECO rules)** are 8 standard rules for detecting anomalous patterns in SPC charts.
+In-house operations typically combine the standard rules with domain-specific extensions.
 
-| Rule | 패턴 | 의미 |
-|------|------|------|
-| 1 | 1점이 ±3σ 밖 | Out of control |
-| 2 | 연속 9점이 평균 한쪽 | Mean shift |
-| 3 | 연속 6점이 증가 또는 감소 | Trend |
-| 4 | 14점이 교대로 상승/하강 | Mixture |
-| 5 | 3점 중 2점이 ±2σ 밖 (동일 방향) | Mean shift |
-| 6 | 5점 중 4점이 ±1σ 밖 (동일 방향) | Mean shift |
-| 7 | 15점이 ±1σ 안 | Stratification (under-dispersion) |
-| 8 | 8점이 ±1σ 밖 (양쪽 모두) | Mixture |
+## 1. Standard Western Electric Rules
 
-## 2. 검출 우선순위
+| Rule | Pattern | Meaning |
+|------|---------|---------|
+| 1 | One point outside ±3σ | Out of control |
+| 2 | 9 consecutive points on one side of the mean | Mean shift |
+| 3 | 6 consecutive points monotonically increasing/decreasing | Trend |
+| 4 | 14 points alternating up/down | Mixture |
+| 5 | 2 of 3 points outside ±2σ (same side) | Mean shift |
+| 6 | 4 of 5 points outside ±1σ (same side) | Mean shift |
+| 7 | 15 points within ±1σ | Stratification (under-dispersion) |
+| 8 | 8 points outside ±1σ (both sides) | Mixture |
 
-| Rule | 검출 속도 | False alarm rate | 적용 권장 |
-|------|----------|------------------|-----------|
-| 1 | 빠름 | 0.27% | 항상 ON |
-| 2 | 중간 | ~0.39% | 항상 ON |
-| 3 | 중간 | ~0.27% | 항상 ON |
-| 5 | 빠름 | ~0.5% | 항상 ON |
-| 6 | 빠름 | ~0.5% | 항상 ON |
-| 4, 7, 8 | 느림 | 낮음 | 선택 적용 |
+## 2. Detection Priority
 
-## 3. 동시 적용 시 False Alarm
+| Rule | Detection speed | False-alarm rate | Recommendation |
+|------|-----------------|------------------|----------------|
+| 1 | Fast | 0.27 % | Always ON |
+| 2 | Medium | ~0.39 % | Always ON |
+| 3 | Medium | ~0.27 % | Always ON |
+| 5 | Fast | ~0.5 % | Always ON |
+| 6 | Fast | ~0.5 % | Always ON |
+| 4, 7, 8 | Slow | Low | Selective |
 
-여러 룰 동시 적용 시 **누적 false alarm rate** 가 빠르게 상승:
+## 3. False Alarms when Combined
 
-\[
-\text{False alarm}_{total} \approx 1 - \prod_i (1 - \alpha_i)
-\]
+When several rules run together, the **cumulative false-alarm rate** rises fast:
 
-→ Rule 1+2+5+6 동시 적용 시 ~1.5% false alarm
-→ 알람 피로 (alarm fatigue) 방지 위해 **rule 선택 + 그룹화** 가 중요
+$$\text{False alarm}_{total} \approx 1 - \prod_i (1 - \alpha_i)$$
 
-## 4. 사내 확장 룰 (예시)
+→ Running rules 1+2+5+6 together gives ~1.5 % false alarms.
+→ To avoid alarm fatigue, **rule selection + grouping** is key.
 
-표준 Weco에 없지만 현장에서 유용한 룰:
+## 4. In-house Extension Rules (examples)
+
+Useful rules in the field that are not part of the standard WECO set:
 
 ### 4.1 Tool-stratified rule
-- 동일 SPC 차트라도 **tool별로 분리하여 평가**
-- "Tool A에서 연속 3점 평균보다 큼" → tool 특이 drift
+
+- Even on the same SPC chart, **evaluate separately per tool**.
+- "Tool A: 3 consecutive points above the mean" → tool-specific drift.
 
 ### 4.2 Recipe-stratified rule
-- Layer / recipe 별로 sub-mean & sub-σ 계산
-- 동일 SPC 카드 안에서 segmentation
 
-### 4.3 Multi-variate Weco
-- 단일 metric이 아닌 **여러 metric의 결합 거리 (Hotelling T²)** 기반
-- Photo: CD + Overlay + Defect 결합
-- FDC: 챔버 multivariate signature
+- Compute sub-mean and sub-σ per layer / recipe.
+- Segmentation within the same SPC card.
 
-## 5. 구현 예시 (Python)
+### 4.3 Multi-variate WECO
+
+- Based on the joint distance of multiple metrics (e.g. Hotelling T²), not a single metric.
+- Photo: CD + Overlay + Defect combined.
+- FDC: chamber multivariate signature.
+
+## 5. Implementation Example (Python)
 
 ```python
 import pandas as pd
 import numpy as np
 
 def weco_rule_1(x, mean, sigma):
-    """1점이 ±3σ 밖"""
+    """One point outside ±3σ"""
     return (x > mean + 3*sigma) | (x < mean - 3*sigma)
 
 def weco_rule_2(x, mean):
-    """연속 9점이 평균 한쪽"""
+    """9 consecutive points on one side of the mean"""
     above = (x > mean).astype(int)
     return above.rolling(9).sum().isin([0, 9])
 
 def weco_rule_5(x, mean, sigma):
-    """3점 중 2점이 ±2σ 밖, 동일 방향"""
+    """2 of 3 points outside ±2σ, same side"""
     above_2s = (x > mean + 2*sigma).astype(int)
     below_2s = (x < mean - 2*sigma).astype(int)
     above_hit = above_2s.rolling(3).sum() >= 2
@@ -79,7 +84,7 @@ def weco_rule_5(x, mean, sigma):
     return above_hit | below_hit
 
 
-# 사용 예시
+# Usage
 df = pd.DataFrame({"cd": [...]})
 mean = df["cd"].mean()
 sigma = df["cd"].std()
@@ -90,21 +95,20 @@ df["r5"] = weco_rule_5(df["cd"], mean, sigma)
 df["alert"] = df[["r1", "r2", "r5"]].any(axis=1)
 ```
 
-## 6. Weco vs AI 이상감지
+## 6. WECO vs AI Anomaly Detection
 
-| 항목 | Weco | AI |
+| Item | WECO | AI |
 |------|------|----|
-| 데이터 요구 | 단변량, 정규성 가정 | 다변량, 시계열 |
-| 학습 데이터 | 불필요 | 정상 데이터 필요 |
-| 해석성 | 매우 높음 | 낮음 (XAI 필요) |
-| 도입 비용 | 낮음 | 보통~높음 |
-| 적합 영역 | SPC 카드 | FDC trace, multivariate |
+| Data requirement | Univariate, normality assumption | Multivariate, time-series |
+| Training data | Not required | Normal data required |
+| Interpretability | Very high | Low (XAI needed) |
+| Deployment cost | Low | Medium ~ high |
+| Best fit | SPC card | FDC trace, multivariate |
 
-→ Weco는 **interpretable 1차 방어선**, AI는 **고차원 trace 2차 방어선**.
-함께 운영하는 것이 표준.
+→ WECO is the **interpretable first line of defense**; AI is the **high-dimensional trace second line**. Operating both together is standard.
 
-## 7. 참고 자료
+## 7. References
 
 - AIAG SPC Manual
-- Montgomery, *Introduction to Statistical Quality Control*, Wiley
-- 저자 사내 자동화 시스템: Weco rule + R 통계 분석 기반
+- D. C. Montgomery, *Introduction to Statistical Quality Control*, Wiley
+- Author's in-house automation: WECO rules + R-based statistical analysis
