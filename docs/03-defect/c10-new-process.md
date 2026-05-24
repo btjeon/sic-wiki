@@ -1,68 +1,68 @@
 ---
-title: C-10 신규 공정 도입시 결함 관리
+title: C-10 New Process Introduction
 ---
 
-# C-10 신규 공정 도입시 결함 관리
+# C-10 Defect Management for New Process Introduction
 
-> **핵심 키워드**: PFMEA · RPN · Detection Coverage · Equipment Qualification · Ramp-up Risk Mgmt · ADC 초기 교육
-> **목적**: 신규 공정 / 디바이스 도입 시 결함 리스크를 **선제적으로** 관리.
+> **Keywords**: PFMEA · RPN · Detection Coverage · Equipment Qualification · Ramp-up Risk Mgmt · ADC initial training set
+> **Purpose**: Manage defect risk **proactively** when introducing a new process or device.
 
-## 1. 4단계 구조
+## 1. Four-Stage Structure
 
-| 단계 | 활동 |
+| Stage | Activity |
 |---|---|
-| 1. **Predict** | 잠재 결함 모드 예측 — 계층 · 단위 공정별 PFMEA |
-| 2. **Define** | 검사 체계 정의 — 결함 모드별 Detection 확보. 장비 · 레시피 · 테스트 조합 |
-| 3. **Select** | 장비 선정 · 벤더 협업 — 감도 · 면적 · 처리속도 · 운영 경제성 · Vendor Roadmap 검토 |
-| 4. **Transfer** | 양산 이관 — SPC 관리 한계 · Recipe Lock · ADC 초기 교육 세트 |
+| 1. **Predict** | Predict latent defect modes — per-layer · per-unit-process PFMEA |
+| 2. **Define** | Define the inspection system — secure Detection per defect mode. Equipment · recipe · test combinations |
+| 3. **Select** | Equipment selection · vendor collaboration — sensitivity · area · throughput · operating economics · vendor roadmap |
+| 4. **Transfer** | Transfer to production — SPC limits · recipe lock · ADC initial training set |
 
-## 2. PFMEA 적용 예시 (Trench MOSFET)
+## 2. PFMEA Example (Trench MOSFET)
 
-| 공정 | 잠재 결함 | S | O | D | RPN | Action |
+| Process | Latent defect | S | O | D | RPN | Action |
 |---|---|---|---|---|---|---|
 | **Trench Etch** | Sidewall Roughness | 9 | 5 | 4 | **180** | SEM cross-section, AOI rule |
 | **Gate Oxidation** | Pinhole / Thinning | 10 | 3 | 5 | **150** | BV monitor, NO post-anneal |
-| **Implant** | Profile shift | 8 | 3 | 3 | 72 | SIMS QA, Cpk 관리 |
+| **Implant** | Profile shift | 8 | 3 | 3 | 72 | SIMS QA, Cpk management |
 
-> S=Severity, O=Occurrence, D=Detection, RPN=S·O·D. 자세한 잠재 결함은 [A-1 결함 분류 체계](a01-classification.md) · [A-3 Trench·Sub-CD](a03-trench-subcd.md) 참조.
+> S=Severity, O=Occurrence, D=Detection, RPN=S·O·D. For more on latent defects see [A-1 Defect Classification](a01-classification.md) · [A-3 Trench·Sub-CD](a03-trench-subcd.md).
 
-## 3. 검사 체계 정의 체크리스트
+## 3. Inspection-System Definition — Checklist
 
-- 단계: 웨이퍼 입고 · 에피 · Photo · Etch · Implant · Anneal · Gate · BEOL · Backside · Final.
-- 각 단계별 **Killer · Slow-Killer Defect 커버리지** 확보 여부.
-- **검사 TPT ↔ Yield Loss Trade-off** 계산.
+- Stages: wafer incoming · epi · Photo · Etch · Implant · Anneal · Gate · BEOL · Backside · Final.
+- For each stage, secure **Killer · Slow-Killer defect coverage**.
+- Compute the **inspection TPT ↔ yield-loss trade-off**.
 
-## 4. 장비 선정 · 벤더 협업 프로토콜
+## 4. Equipment Selection · Vendor Protocol
 
 ```mermaid
 flowchart LR
-    A[RFI / RFP] --> B[Demo 웨이퍼]
-    B --> C[Cap Lab 평가]
-    C --> D[양산 레퍼런스 처리]
-    D --> E[Service 계약]
+    A[RFI / RFP] --> B[Demo wafer]
+    B --> C[Cap-lab evaluation]
+    C --> D[Production reference runs]
+    D --> E[Service contract]
 ```
 
-- KLA · Lasertec · AMAT · Hitachi-High-Tech · TASMIT 등 SiC 전용 장비 견적 경쟁.
+- KLA · Lasertec · AMAT · Hitachi-High-Tech · TASMIT — SiC-dedicated equipment bid competition.
 
-## 5. 양산 이관 (Ramp-up Risk Mgmt)
+## 5. Production Transfer (Ramp-up Risk Management)
 
-| 기간 | 활동 |
+| Period | Activity |
 |---|---|
-| **초기 1개월** | Defect Density ↔ Bin Yield Mismatch 관찰 → ADC 재학습 |
-| **2~3개월** | SPC Limit 고정, EVT 주기 설정, VOG Sample Plan 확정 |
+| **First month** | Observe Defect Density ↔ Bin-Yield mismatch → re-learn ADC |
+| **Months 2–3** | Lock SPC Limit, set EVT cadence, finalize VOG Sample Plan |
 
-## 6. 운영 포인트
+## 6. Operational Notes
 
-- 신규 공정 도입은 **PFMEA → 검사 커버리지 정의 → 장비 / 레시피 검증 → SPC / ADC Lock** 순서로 닫아야 함.
-- Ramp-up 초기에는 Yield 뿐 아니라 **Defect Class Drift · Unknown Rate · Tool Matching · VOG Escape 가능성** 을 함께 모니터링.
+- New-process introduction must close in the order **PFMEA → inspection coverage → equipment / recipe verification → SPC / ADC lock**.
+- Early in ramp-up monitor not only yield but **defect-class drift · unknown rate · tool matching · VOG escape risk** together.
 
-## 7. 참고자료
+## 7. References
 
 - AIAG-VDA FMEA Handbook
 - SEMI Equipment Qualification Guideline (E10 / E14 / E58)
 
 ---
 
-## 추가 노트 (2026-05-24)
+## Notes (2026-05-24)
 
-- Notion `D-Ch.10 신규 공정 도입시 결함 관리` 본문 1차 이관 + 장비 선정 mermaid 추가.
+- First migration of Notion `D-Ch.10 Defect Management for New Process Introduction` + added an equipment-selection mermaid.

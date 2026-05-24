@@ -1,33 +1,33 @@
 ---
-title: B-7 Klarity 운영
+title: B-7 Klarity Operations
 ---
 
-# B-7 Klarity 운영
+# B-7 Klarity Operations
 
-> **핵심 키워드**: KLA Klarity · Defect Source Analysis (DSA) · Wafer Map Pattern Recognition · Defect-to-Yield Correlation · Daily Drill-down
-> **목적**: KLA Klarity Defect / Yield Engineering Tool 을 SiC 양산에서 활용 — Wafer Map 패턴 분석, Defect DB, Yield-to-Defect 연결.
+> **Keywords**: KLA Klarity · Defect Source Analysis (DSA) · Wafer Map Pattern Recognition · Defect-to-Yield Correlation · Daily Drill-down
+> **Purpose**: Use KLA Klarity Defect / Yield Engineering Tool in SiC production — Wafer Map pattern analysis, defect DB, yield-to-defect connection.
 
-## 1. Klarity 핵심 기능
+## 1. Klarity Core Features
 
-| 기능 | 설명 |
+| Feature | Description |
 |---|---|
-| **Defect Source Analysis (DSA)** | 장비 / 시점 / Lot 원인 식별 |
-| **Wafer Map Pattern Recognition** | Edge / Center / Scratch / Cluster 패턴 자동 분류 |
-| **Defect-to-Yield Correlation** | Defect 클래스 × Yield Bin Cross-tab |
-| **Trend / Pareto / Drill-down** | SPC · FDC 연동 |
+| **Defect Source Analysis (DSA)** | Identify equipment / time / lot origins |
+| **Wafer Map Pattern Recognition** | Auto-classify Edge / Center / Scratch / Cluster patterns |
+| **Defect-to-Yield Correlation** | Defect-class × Yield Bin cross-tab |
+| **Trend / Pareto / Drill-down** | SPC · FDC integration |
 
-## 2. SiC 특화 운영 포인트
+## 2. SiC-specific Operating Points
 
-| 운영 시나리오 | Klarity 활용 |
+| Scenario | Klarity usage |
 |---|---|
-| **BPD → Stacking Fault 전환 추적** | PL 이미지 + Klarity 결합으로 시간 축 모니터링 ([D-14 참조](d14-body-diode.md)) |
-| **Carrot · Triangular 공간 패턴** | Reactor Source 연관 분석 ([A-2 참조](a02-surface.md)) |
-| **Sub-CD micro-defect 클러스터링** | Etch 레시피 변경 효과 증명 ([A-3 참조](a03-trench-subcd.md)) |
+| **Track BPD → Stacking Fault conversion** | Combine PL imaging + Klarity to monitor across time ([see D-14](d14-body-diode.md)) |
+| **Carrot · Triangular spatial pattern** | Reactor-source correlation analysis ([see A-2](a02-surface.md)) |
+| **Sub-CD micro-defect clustering** | Demonstrate the effect of etch-recipe changes ([see A-3](a03-trench-subcd.md)) |
 
-## 3. ADC ↔ Klarity 연결
+## 3. ADC ↔ Klarity Integration
 
-- [B-6 ADC](b06-adc.md) 출력 → Klarity DB 적재 → Yield Engineer 가 **Defect Class 단위 Pareto · Trend · Map** 을 한 화면에서 조회.
-- ADC 재학습 필요성을 **Yield Loss 관점** 으로 우선순위화.
+- [B-6 ADC](b06-adc.md) output → loaded into the Klarity DB → Yield Engineer reviews **Pareto · Trend · Map per defect class** in a single view.
+- Prioritize ADC re-learning by **yield-loss impact**.
 
 ```mermaid
 flowchart LR
@@ -38,23 +38,23 @@ flowchart LR
     D --> F[Alarm → RCA<br/>A-4]
 ```
 
-## 4. 일상 운영 흐름
+## 4. Daily Operating Rhythm
 
-- **Daily / Weekly** — Defect Density Trend Review.
-- **Yield Excursion 발생 시** — 1포인트 조회: Top-3 Defect Class, Map 패턴, Recent Tool 변경 이력.
+- **Daily / Weekly** — defect-density trend review.
+- **On yield excursion** — single-pivot query: Top-3 defect classes, map patterns, recent tool changes.
 
-## 5. 운영 포인트
+## 5. Operational Notes
 
-- Klarity 운영의 핵심은 **Defect Class · Wafer Map Pattern · Tool History · Yield Bin 을 한 화면에서 연결** 하는 것.
-- Yield Excursion 시 **Top Defect Class → Spatial Pattern → Recent Tool / Recipe Change** 의 표준 Drill-down 흐름 유지.
+- The heart of Klarity is **connecting defect class · wafer-map pattern · tool history · yield bin in a single screen**.
+- On yield excursions, maintain the standard drill-down: **Top defect class → spatial pattern → recent tool / recipe change**.
 
-## 6. 참고자료
+## 6. References
 
 - KLA Klarity Defect / Yield User Manual
 - KLA Tencor White Paper — *Yield Acceleration with Klarity Defect*
 
 ---
 
-## 추가 노트 (2026-05-24)
+## Notes (2026-05-24)
 
-- Notion `D-Ch.7 Klarity 운영` 본문 1차 이관 + AOI→ADC→Klarity→SPC mermaid 추가.
+- First migration of Notion `D-Ch.7 Klarity Operations` + added an AOI → ADC → Klarity → SPC pipeline mermaid.

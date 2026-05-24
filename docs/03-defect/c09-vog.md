@@ -4,48 +4,48 @@ title: C-9 VOG (Visual Outgoing Inspection)
 
 # C-9 VOG (Visual Outgoing Inspection)
 
-> **핵심 키워드**: AQL · ZDPM · Sample Plan · ANSI/ASQ Z1.4 · MES Hold/Release · AI Vision Automation
-> **목적**: 출하 전 최종 관문 — 고객 반품 제로화와 외관 품질 안정화.
+> **Keywords**: AQL · ZDPM · Sample Plan · ANSI/ASQ Z1.4 · MES Hold/Release · AI Vision Automation
+> **Purpose**: The final pre-ship gate — eliminate customer returns and stabilize appearance quality.
 
-## 1. VOG 정의
+## 1. VOG Definition
 
-- **Visual Outgoing Inspection** — 패키지 이전 / 이후 외관 최종 검사.
-- 의의 — 디바이스 자체의 **전기적 Bin Pass 와 별개로**, 외형 · 마킹 · 면적 결함 제거.
+- **Visual Outgoing Inspection** — final pre-/post-package appearance inspection.
+- Significance — removes shape · marking · appearance defects **independent of the electrical Bin Pass** of the device itself.
 
-## 2. SiC VOG 주요 항목
+## 2. Main SiC VOG Items
 
-| 결함 | 원인 | 관리 |
+| Defect | Cause | Control |
 |---|---|---|
-| **Front-side Scratch** | Handling, Cassette | 운반구 관리 |
-| **Backside Crack / Chip** | Backside 그라인딩, Wafer warp | Backside AOI · Edge 처리 |
-| **Pkg Marking Error** | 레이저 마킹 | OCR 검증 |
-| **Pkg 외관 결함** | Mold / Wire bond / Sinter | Macro AOI |
+| **Front-side Scratch** | Handling, cassette | Carrier management |
+| **Backside Crack / Chip** | Backside grinding, wafer warp | Backside AOI · edge processing |
+| **Package Marking Error** | Laser marking | OCR verification |
+| **Package Appearance Defects** | Mold / wire bond / sinter | Macro AOI |
 
-## 3. 운영 체계
+## 3. Operating Framework
 
-| 항목 | 표준 |
+| Item | Standard |
 |---|---|
-| **AQL** (Acceptance Quality Limit) | AEC Automotive — **ZDPM (Zero Defect ppm)** 목표 |
+| **AQL** (Acceptance Quality Limit) | AEC Automotive — **ZDPM (Zero Defect ppm)** target |
 | **Sample Plan** | ANSI / ASQ Z1.4. Lot size × Inspection Level |
-| **MES 연동** | 결함 구간 발생 → 시점 추적 + Hold / Release |
+| **MES integration** | Defect-zone occurrence → time-tracking + Hold / Release |
 
-## 4. ADC ↔ VOG 연결
+## 4. ADC ↔ VOG Linkage
 
-- VOG 도 AI 비전으로 자동화 가능 ([B-6 ADC](b06-adc.md) · [Machine Vision 적용](../04-control-ai/ai-machine-vision.md) 참조).
-- 단, **고객 Audit · Compliance 요구사항** 으로 수동 검증 포인트 유지.
+- VOG can also be automated with AI vision (see [B-6 ADC](b06-adc.md) · [Machine Vision application](../04-control-ai/ai-machine-vision.md)).
+- However, customer audit / compliance requirements keep **manual verification points**.
 
-## 5. 운영 포인트
+## 5. Operational Notes
 
-- VOG 는 전기적 Bin Pass 이후에도 **고객 관점의 외관·마킹·취급 결함을 차단하는 마지막 gate**.
-- AI 비전 자동화 시에도 **Audit · Compliance 관점의 수동 검증 포인트와 Traceability** 유지.
+- VOG is the **last gate that blocks customer-facing appearance · marking · handling defects** even after electrical Bin Pass.
+- When automating with AI vision, retain **audit · compliance manual checkpoints and traceability**.
 
-## 6. 참고자료
+## 6. References
 
 - AEC Q101 / Q102 (Automotive Reliability)
 - ANSI / ASQ Z1.4 (Sampling)
 
 ---
 
-## 추가 노트 (2026-05-24)
+## Notes (2026-05-24)
 
-- Notion `D-Ch.9 VOG (Visual Outgoing Inspection)` 본문 1차 이관 + Backside / Pkg 외관 결함 행 보강.
+- First migration of Notion `D-Ch.9 VOG (Visual Outgoing Inspection)` + added Backside / Package-appearance rows.
