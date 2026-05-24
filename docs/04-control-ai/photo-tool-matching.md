@@ -113,7 +113,7 @@ flowchart TD
 
 - **R** + ggplot2 + lme4 (mixed-effect model)
 - **Python** + pandas + statsmodels + JMP-style 분석
-- 사내 자동화: SPC Weco rule (자세한 내용 → [Weco Rule 설계](../03-fdc-spc/weco-rules.md))
+- 사내 자동화: SPC Weco rule (자세한 내용 → [Weco Rule 설계](fdc-weco-rules.md))
 
 ## 7. 참고 자료
 

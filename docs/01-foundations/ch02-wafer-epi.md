@@ -73,7 +73,7 @@ end note
 | Downfall | particle | Gate oxide 파괴 |
 | BPD propagation | substrate BPD | Bipolar degradation |
 
-→ 상세 내용은 [결함 유형](defects.md) 참조.
+→ 상세 내용은 [Part III §A-2 SiC 표면 결함](../03-defect/a02-surface.md) · [§A-3 Trench·Sub-CD](../03-defect/a03-trench-subcd.md) 참조.
 
 ## 4. In-line / End-of-line 측정
 
@@ -100,7 +100,7 @@ end note
     AI 이상감지 적용 시 graph-based FDC (GNN) 가 적합:
     챔버 간 cross-correlation을 학습 → Tool 특이도 검출.
 
-    상세: [FDC AI 이상 감지 적용 사례](../03-fdc-spc/ai-anomaly-detection.md)
+    상세: [FDC AI 이상 감지 사례](../04-control-ai/fdc-ai-anomaly.md) · [GNN 기반 FDC](../04-control-ai/fdc-gnn.md)
 
 ## 6. 참고 자료
 

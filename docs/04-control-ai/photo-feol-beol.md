@@ -90,7 +90,7 @@ SiC wafer warpage 환경에서는 **focus margin 30% 이상** 확보 권장.
 | Contact ↔ Gate | < 40 nm |
 | M1 ↔ Contact | < 60 nm |
 
-→ Tool 간 matching이 핵심. 상세: [Tool Matching](tool-matching.md)
+→ Tool 간 matching이 핵심. 상세: [Tool Matching](photo-tool-matching.md)
 
 ## 6. Photoresist 선택
 
