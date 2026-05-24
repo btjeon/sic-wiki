@@ -15,37 +15,45 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :material-chip: **1. 소자·공정**
+-   :material-book-open-variant: **📚 Part I. SiC Foundations**
 
     ---
 
-    SiC MOSFET 구조, Epitaxy 공정, BPD/TED 등 결함 유형 정리
+    재료·결정(4H Polytype) · 웨이퍼 & 에피(BPD/TSD/TED) · 디바이스 구조(MOSFET/SJ/JBS)
 
-    [:octicons-arrow-right-24: 바로가기](01-devices-process/index.md)
+    [:octicons-arrow-right-24: 바로가기](01-foundations/index.md)
 
--   :material-camera-iris: **2. Photo 공정**
-
-    ---
-
-    FEOL/BEOL 포토리소그래피, OPC 마스크 설계, ASML/Nikon Tool Matching
-
-    [:octicons-arrow-right-24: 바로가기](02-photolithography/index.md)
-
--   :material-chart-line: **3. FDC / SPC**
+-   :material-cog-outline: **⚙️ Part II. Process & Manufacturing**
 
     ---
 
-    Weco Rule 설계, FDC AI 이상 감지 알고리즘 적용 사례
+    SiC 공정 흐름(FEOL→BEOL) · onsemi BK Factory 케이스 · 수직계열 통합 공급망
 
-    [:octicons-arrow-right-24: 바로가기](03-fdc-spc/index.md)
+    [:octicons-arrow-right-24: 바로가기](02-process/index.md)
 
--   :material-robot: **4. AI 적용**
+-   :material-magnify-scan: **📕 Part III. SiC Defect Management**
 
     ---
 
-    Machine Vision, 불량 분류 모델, FDC GNN, RCA Ontology
+    결함 분류 · AOI/ADC/Klarity · SPC·VOG · 신뢰성(Gate Oxide·BTI·BPD) 14 챕터
 
-    [:octicons-arrow-right-24: 바로가기](04-ai-applications/index.md)
+    [:octicons-arrow-right-24: 바로가기](03-defect/index.md)
+
+-   :material-robot-outline: **🔧 Part IV. 공정 제어 & AI 확장**
+
+    ---
+
+    Photo (FEOL/BEOL·OPC·Tool Matching) · FDC (Weco·AI 이상감지·GNN) · Machine Vision · RCA Ontology
+
+    [:octicons-arrow-right-24: 바로가기](04-control-ai/index.md)
+
+-   :material-bookshelf: **📎 Part V. References**
+
+    ---
+
+    onsemi 공개 백서 색인 (TND6396 신뢰성, BRD8094 수직통합) · 용어집(Glossary)
+
+    [:octicons-arrow-right-24: 바로가기](05-references/index.md)
 
 </div>
 
