@@ -1,127 +1,127 @@
 ---
-title: Ch.5 onsemi SiC 사업·제품·BK Factory
+title: Ch.5 onsemi SiC Business · Products · BK Factory
 ---
 
-# Ch.5 onsemi SiC 사업·제품·BK Factory
+# Ch.5 onsemi SiC Business · Products · BK Factory
 
-> **핵심 키워드**: EliteSiC · D1/D2/D3 · M1/M2/M3/M3S/M3T · Cascode JFET · Vertical Supply Chain · BK Factory
-> **참조 자료**: BRD8094 (수직통합) · TND6396 (신뢰성)
-> **목적**: onsemi 의 SiC 사업 포트폴리오, 주요 제품군 네비게이션, BK Factory 의 위치·담당 제품군을 공개 자료 기반으로 정리.
+> **Keywords**: EliteSiC · D1/D2/D3 · M1/M2/M3/M3S/M3T · Cascode JFET · Vertical Supply Chain · BK Factory
+> **References**: BRD8094 (vertical integration) · TND6396 (reliability)
+> **Purpose**: Organize onsemi's SiC business portfolio, main product navigation, and BK Factory's role from public sources.
 
-!!! info "출처"
-    [onsemi.com — Silicon Carbide (SiC)](https://www.onsemi.com/products/discrete-power-modules/silicon-carbide-sic) + IR / Brochure 공개 자료. 모든 정보는 공개 마케팅·기술 자료 인용.
+!!! info "Sources"
+    [onsemi.com — Silicon Carbide (SiC)](https://www.onsemi.com/products/discrete-power-modules/silicon-carbide-sic) + IR / brochure public material. All information is cited from public marketing and technical material.
 
-## 1. 회사 개요
+## 1. Company Overview
 
-- 본사 — 미국 Arizona Phoenix. NASDAQ: **ON**.
-- 주력 제품 — Power Discrete (SiC · IGBT · Si MOSFET) · Image Sensor · Analog / Mixed-Signal.
-- 전략 — *Intelligent Power & Sensing* — EV · ADAS · Industrial Power 가 성장축.
+- HQ — Phoenix, Arizona, USA. NASDAQ: **ON**.
+- Main products — Power Discrete (SiC · IGBT · Si MOSFET) · Image Sensor · Analog / Mixed-Signal.
+- Strategy — *Intelligent Power & Sensing* — EV · ADAS · Industrial Power as growth axes.
 
-## 2. onsemi SiC 제품 네비게이션
+## 2. onsemi SiC Product Navigation
 
 ```
 Home › Products › Discrete, Power & Modules › Silicon Carbide (SiC)
-  ├─ SiC Diodes              (D1 / D2 / D3 패밀리)
+  ├─ SiC Diodes              (D1 / D2 / D3 families)
   ├─ SiC MOSFETs             (M1 / M2 / M3 / M3S / M3T)
   ├─ SiC MOSFETs Bare Die    (EV traction, OBC, DC-DC)
-  ├─ SiC JFETs               (650–1700 V, R_DS(on) 4 mΩ↑)
-  ├─ SiC Cascode JFETs       (JFET + Si-MOSFET, 표준 0–12 V 게이트)
-  ├─ SiC Combo JFETs         (Normally-off, 25% size 절감)
+  ├─ SiC JFETs               (650–1700 V, R_DS(on) ≥ 4 mΩ)
+  ├─ SiC Cascode JFETs       (JFET + Si-MOSFET, standard 0–12 V gate)
+  ├─ SiC Combo JFETs         (Normally-off, 25% size reduction)
   └─ Power Modules
       ├─ Full SiC (Direct, B2, Half/Full-bridge, Vienna)
       └─ Si/SiC Hybrid (IGBT + Si diode + SiC diode)
 ```
 
-보조 섹션: **EliteSiC Family** · Resources (Eval Kits, Tech Docs) · SPICE / PLECS Models · Quality & Reliability · Vertical Supply Chain.
+Auxiliary sections: **EliteSiC Family** · Resources (Eval Kits, Tech Docs) · SPICE / PLECS Models · Quality & Reliability · Vertical Supply Chain.
 
-## 3. 제품 패밀리 (EliteSiC 브랜드)
+## 3. Product Families (EliteSiC brand)
 
 ### 3.1 SiC Diodes — D1 / D2 / D3
 
-| 세대 | 특징 | 대표 용도 |
+| Generation | Features | Typical Use |
 |---|---|---|
-| **D1** | 1세대 SBD / JBS | 범용 PFC, Booster |
-| **D2** | 수율·Surge 향상, 대전류 대응 | 서버 PSU, ESS |
-| **D3** | 최신 세대, EV-grade qualified | OBC, Solar string inverter |
+| **D1** | 1st-gen SBD / JBS | General-purpose PFC, booster |
+| **D2** | Higher yield and surge, large-current capable | Server PSU, ESS |
+| **D3** | Latest generation, EV-grade qualified | OBC, solar string inverter |
 
 ### 3.2 SiC MOSFETs — M1 / M2 / M3 / M3S / M3T
 
-| 세대 | 구조 / 특징 | 대표 용도 |
+| Generation | Structure / Features | Typical Use |
 |---|---|---|
-| M1 | 1세대 Planar | 산업용 |
-| M2 | Planar 고도화 | EV PFC급 |
-| M3 | 3세대 Planar, R_DS(on) 개선 | EV traction inverter |
-| **M3S** | **Trench MOSFET — onsemi 주력** | EV main inverter, OBC |
-| **M3T** | 고온·고속 switching 최적화 | 800 V 아키텍처, DC-DC |
+| M1 | 1st-gen Planar | Industrial |
+| M2 | Improved Planar | EV PFC class |
+| M3 | 3rd-gen Planar, improved R_DS(on) | EV traction inverter |
+| **M3S** | **Trench MOSFET — onsemi's mainline** | EV main inverter, OBC |
+| **M3T** | Optimized for high-temperature, high-speed switching | 800 V architecture, DC-DC |
 
 ### 3.3 SiC MOSFETs Bare Die
 
-- EV traction · OBC · DC-DC 용 다이 출하 — 자사 / 고객 모듈 조립용.
+- Die shipment for EV traction · OBC · DC-DC — for in-house or customer module assembly.
 
 ### 3.4 SiC JFETs (650–1,700 V)
 
-- Normally-on 구조에서 R_DS(on) 4 mΩ 급 초저저항 구현.
-- Cascode · Combo 구조로 게이트 드라이브 편의성 제공.
+- Achieves R_DS(on) at the 4 mΩ class in normally-on construction.
+- Cascode · Combo variants provide gate-drive convenience.
 
 ### 3.5 SiC Cascode JFETs
 
-- JFET + Si-MOSFET 조합 → **표준 0–12 V 게이트 호환** (기존 Si IGBT 게이트 설계 재사용).
-- 장점 — SiC 고속 switching + Si 게이트 신뢰성.
+- JFET + Si-MOSFET combination → **compatible with standard 0–12 V gate drive** (reuses existing Si IGBT gate-driver designs).
+- Benefits — SiC fast switching + Si gate reliability.
 
 ### 3.6 SiC Combo JFETs
 
-- **Normally-off** 동작으로 안전성 확보.
-- 패키지·소자 면적 25 % 이상 절감.
+- **Normally-off** operation for safety.
+- Package / die area reduced by 25 % or more.
 
 ### 3.7 Power Modules
 
-| 분류 | 폼팩터 | 대표 용도 |
+| Class | Form factor | Typical Use |
 |---|---|---|
-| **Full SiC** | Direct, B2, Half / Full-bridge, Vienna | EV traction, ESS, Solar string |
-| **Si / SiC Hybrid** | IGBT + Si diode + SiC diode | 고전압 PSU, 의료 RF |
+| **Full SiC** | Direct, B2, Half / Full-bridge, Vienna | EV traction, ESS, solar string |
+| **Si / SiC Hybrid** | IGBT + Si diode + SiC diode | High-voltage PSU, medical RF |
 
-## 4. 보조 자원 (Resources)
+## 4. Auxiliary Resources
 
-- **EliteSiC Family** 소개 하위 페이지.
-- **Resources** — Eval Kits, Tech Documents, Application Notes (예 [TND6396](../05-references/tnd6396.md), [BRD8094](../05-references/brd8094.md)).
-- **SPICE / PLECS Models** — 설계·시뮬레이션용.
-- **Quality & Reliability** — AEC-Q101, JC-70.2, AQG324 준수 자료.
-- **Vertical Supply Chain** — BRD8094 기반 9단계 공급망 → [Ch.6 수직계열 통합](ch06-vertical-integration.md).
+- **EliteSiC Family** overview sub-pages.
+- **Resources** — Eval Kits, Tech Documents, Application Notes (e.g. [TND6396](../05-references/tnd6396.md), [BRD8094](../05-references/brd8094.md)).
+- **SPICE / PLECS Models** — design and simulation.
+- **Quality & Reliability** — AEC-Q101, JC-70.2, AQG324 conformance materials.
+- **Vertical Supply Chain** — 9-step supply chain based on BRD8094 → [Ch.6 Vertical Supply Chain](ch06-vertical-integration.md).
 
-## 5. 글로벌 제조 Footprint
+## 5. Global Manufacturing Footprint
 
-| 사이트 | 역할 |
+| Site | Role |
 |---|---|
-| Czech Republic — Roznov | SiC Substrate / Boule 소싱 확대 |
-| USA — New Hampshire / Maine | 웨이퍼 · 에피 |
-| **Korea — Bucheon (BK Factory)** | **SiC 디바이스 Front-end (국내 핵심)** |
-| Vietnam / China (Tier-2) | 패키징 / Test |
+| Czech Republic — Roznov | SiC substrate / boule sourcing expansion |
+| USA — New Hampshire / Maine | Wafer · epi |
+| **Korea — Bucheon (BK Factory)** | **SiC device front-end (domestic core)** |
+| Vietnam / China (Tier-2) | Packaging / test |
 
-## 6. BK Factory 포지셔닝
+## 6. BK Factory Positioning
 
-- 위치 — 경기 부천 원미구. 국내 소수의 전력반도체 양산 Fab.
-- 계보 — SANYO Semiconductor 설립 계보를 이은 사이트 (onsemi 의 SANYO 인수 이후 주력 SiC 사이트로 재편).
-- 양산 라인 관점의 핵심 관리 영역 — **Trench MOSFET (M3S / M3T) · SBD (D2 / D3) · Hybrid Module** 제품군의 결함·수율·신뢰성 관리.
-- 단위 공정 흐름 → [Ch.4 SiC 공정 흐름](ch04-process-flow.md).
+- Location — Wonmi-gu, Bucheon, Gyeonggi, Korea. One of the few domestic power-semiconductor mass-production fabs.
+- Lineage — site descended from SANYO Semiconductor (after onsemi's acquisition of SANYO, repositioned as a core SiC site).
+- Core management areas from the mass-production-line perspective — defect / yield / reliability management for **Trench MOSFET (M3S / M3T) · SBD (D2 / D3) · Hybrid Module** product families.
+- Unit-process flow → [Ch.4 SiC Process Flow](ch04-process-flow.md).
 
-## 7. 경쟁 구도 (참고)
+## 7. Competitive Landscape (for reference)
 
-| 업체 | 포지션 |
+| Company | Position |
 |---|---|
-| **Wolfspeed** | 웨이퍼 + 디바이스 수직 통합 1위 |
-| **Infineon (CoolSiC)** | 8″ 전환 선도 |
-| **STMicro** | 체코·이탈리아 SiC Mega-Fab 구축 |
-| **Rohm** | Trench Gen4 구조 선도 |
-| **국내** | SK실트론 · 예스파워테크닉스 · KEC 등 |
+| **Wolfspeed** | #1 in vertically integrated wafer + device |
+| **Infineon (CoolSiC)** | Leading the 8″ transition |
+| **STMicro** | Building SiC mega-fabs in Czech Republic and Italy |
+| **Rohm** | Leading Trench Gen4 architecture |
+| **Domestic Korea** | SK siltron · Yes PowerTechnix · KEC, etc. |
 
-## 8. 다음 챕터 안내
+## 8. Next Chapter
 
-- → [Ch.6 수직계열 통합 공급망 & EV 전략](ch06-vertical-integration.md) (BRD8094 해설)
-- → [Part III §D 신뢰성](../03-defect/d11-reliability.md) (TND6396 기반)
+- → [Ch.6 Vertical Supply Chain & EV Strategy](ch06-vertical-integration.md) (BRD8094 walkthrough)
+- → [Part III §D Reliability](../03-defect/d11-reliability.md) (based on TND6396)
 
-## 9. 참고자료
+## 9. References
 
-- [onsemi.com — SiC](https://www.onsemi.com/products/discrete-power-modules/silicon-carbide-sic) · IR Deck (Quarterly)
+- [onsemi.com — SiC](https://www.onsemi.com/products/discrete-power-modules/silicon-carbide-sic) · IR Deck (quarterly)
 - onsemi EliteSiC Brochure
 - onsemi BRD8094/D — *Future-Proofing Your SiC Design* (Sep 2023)
 - onsemi TND6396/D — *From Challenging Material to Robust Reliability* (Mar 2024 Rev.2)
@@ -129,7 +129,7 @@ Home › Products › Discrete, Power & Modules › Silicon Carbide (SiC)
 
 ---
 
-## 추가 노트 (2026-05-24)
+## Notes (2026-05-24)
 
-- Notion `Chapter 5. onsemi SiC 사업·제품·BK Factory` 본문 1차 이관.
-- 모든 정보는 공개 마케팅·IR 자료 인용. 내부 비공개 정보 없음.
+- First migration of Notion `Chapter 5. onsemi SiC Business · Products · BK Factory`.
+- All material cited from public marketing / IR sources. No internal confidential information.
