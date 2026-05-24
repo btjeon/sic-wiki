@@ -147,26 +147,60 @@ plugins:
 nav:
   - 홈: index.md
   - 소개: about.md
-  - 1. 소자·공정:
-      - 개요: 01-devices-process/index.md
-      - SiC MOSFET 구조: 01-devices-process/sic-mosfet-structure.md
-      - Epitaxy 공정: 01-devices-process/epitaxy.md
-      - 결함 유형 (BPD/TED/TSD): 01-devices-process/defects.md
-  - 2. Photo 공정:
-      - 개요: 02-photolithography/index.md
-      - FEOL/BEOL 포토리소그래피: 02-photolithography/feol-beol.md
-      - OPC 마스크 설계: 02-photolithography/opc-mask.md
-      - ASML/Nikon Tool Matching: 02-photolithography/tool-matching.md
-  - 3. FDC / SPC:
-      - 개요: 03-fdc-spc/index.md
-      - Weco Rule 설계: 03-fdc-spc/weco-rules.md
-      - AI 이상 감지 적용 사례: 03-fdc-spc/ai-anomaly-detection.md
-  - 4. AI 적용:
-      - 개요: 04-ai-applications/index.md
-      - 머신비전 적용 사례: 04-ai-applications/machine-vision.md
-      - 불량 분류 모델: 04-ai-applications/defect-classification.md
-  - 참고자료:
-      - 용어집 (Glossary): references/glossary.md
+
+  - 📚 Part I. SiC Foundations:
+      - 개요: 01-foundations/index.md
+      - Ch.1 SiC 재료·결정 기초: 01-foundations/ch01-material.md
+      - Ch.2 SiC 웨이퍼 & 에피택셜 성장: 01-foundations/ch02-wafer-epi.md
+      - Ch.3 SiC 디바이스 구조: 01-foundations/ch03-device.md
+
+  - ⚙️ Part II. Process & Manufacturing:
+      - 개요: 02-process/index.md
+      - Ch.4 SiC 공정 흐름 (FEOL→BEOL): 02-process/ch04-process-flow.md
+      - Ch.5 onsemi SiC 사업·제품·BK Factory: 02-process/ch05-onsemi-bk.md
+      - Ch.6 수직계열 통합 공급망 & EV 전략: 02-process/ch06-vertical-integration.md
+
+  - 📕 Part III. SiC Defect Management:
+      - 개요: 03-defect/index.md
+      - A. 결함의 이해:
+          - A-1 결함 분류 체계: 03-defect/a01-classification.md
+          - A-2 SiC 표면 결함: 03-defect/a02-surface.md
+          - A-3 Trench·Sub-CD 마이크로 결함: 03-defect/a03-trench-subcd.md
+          - A-4 Killer/Slow-Killer RCA: 03-defect/a04-killer-rca.md
+      - B. 검사 장비·AI·운영:
+          - B-5 AOI 검사 장비 운영: 03-defect/b05-aoi.md
+          - B-6 ADC (Auto Defect Classification): 03-defect/b06-adc.md
+          - B-7 Klarity 운영: 03-defect/b07-klarity.md
+      - C. 관리 체계·품질:
+          - C-8 SPC 기반 결함 밀도 관리: 03-defect/c08-spc.md
+          - C-9 VOG (Visual Outgoing Inspection): 03-defect/c09-vog.md
+          - C-10 신규 공정 도입시 결함 관리: 03-defect/c10-new-process.md
+      - D. 신뢰성 백서 (TND6396):
+          - D-11 신뢰성 방법론 & Qualification: 03-defect/d11-reliability.md
+          - D-12 SiC/SiO₂ 계면 & Gate Oxide: 03-defect/d12-gate-oxide.md
+          - D-13 BTI & Dynamic Stressing: 03-defect/d13-bti.md
+          - D-14 Body Diode & BPD Management: 03-defect/d14-body-diode.md
+
+  - 🔧 Part IV. 공정 제어 & AI 확장:
+      - 개요: 04-control-ai/index.md
+      - Photo 공정:
+          - FEOL/BEOL 포토리소그래피: 04-control-ai/photo-feol-beol.md
+          - OPC 마스크 설계: 04-control-ai/photo-opc.md
+          - ASML/Nikon Tool Matching: 04-control-ai/photo-tool-matching.md
+      - FDC / SPC:
+          - Weco Rule 설계: 04-control-ai/fdc-weco-rules.md
+          - FDC AI 이상 감지 사례: 04-control-ai/fdc-ai-anomaly.md
+          - GNN 기반 FDC: 04-control-ai/fdc-gnn.md
+      - Machine Vision & AI:
+          - 머신비전 적용 (WCMP): 04-control-ai/ai-machine-vision.md
+          - 불량 분류 모델: 04-control-ai/ai-defect-classification.md
+          - RCA Ontology (PCB→SiC): 04-control-ai/ai-rca-ontology.md
+
+  - 📎 Part V. References:
+      - 자료 색인: 05-references/index.md
+      - 📄 TND6396 — Robust Reliability: 05-references/tnd6396.md
+      - 📄 BRD8094 — Vertical Integration: 05-references/brd8094.md
+      - 용어집 (Glossary): 05-references/glossary.md
 
 # -----------------------------------------------------------
 # 푸터 / 소셜
@@ -179,4 +213,3 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/%EB%B3%91%ED%83%81-%EC%A0%84-8871b8153/
       name: LinkedIn
-  generator: false
