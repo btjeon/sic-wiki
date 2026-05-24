@@ -92,4 +92,4 @@ Use the GitHub icon at the top-right to visit the repository; each page footer s
 
 - **Author LinkedIn**: [Byoungtak Jeon (전병탁)](https://www.linkedin.com/in/%EB%B3%91%ED%83%81-%EC%A0%84-8871b8153/)
 - **onsemi SiC product line**: <https://www.onsemi.com/products/discrete-power-modules/silicon-carbide-sic>
-- **Velog (blog)**: integration planned
+- **Velog (blog)**: <https://velog.io/@gogobt/posts>
