@@ -5,7 +5,9 @@
 **전병탁 (Byoungtak Jeon)**
 AX AI Tech Consulting · PM · Inspection PO
 
-- **현재**: INTERX (2025.03~) — PCB Inspection AI PO, Battery 셀 조립공정 자율제조 시스템 PM
+- **현재**: INTERX (2025.04) —
+- Inspection Ai, Ax tech PM,inspectio. ai PO
+- 셀 조립공정 자율제조 시스템
 - **이전**: DB HiTek (2000.10~2025.03, 약 24년 6개월) — Photo 공정 엔지니어 → Fab Innovation Team
 - **주요 이력**:
     - 2023 산업통상자원부 장관 표창 (반도체 AI 고도화 기여)
