@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sic-mosfet" class="md-skip">
+        <a href="#ch3-sic" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -680,10 +680,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1-sic-sbd-schottky-barrier-diode" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 기본 구조
+        1. SiC SBD (Schottky Barrier Diode)
       
     </span>
   </a>
@@ -691,10 +691,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-planar-vs-trench" class="md-nav__link">
+  <a href="#2-sic-mosfet" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Planar vs Trench
+        2. SiC MOSFET 기본 구조
       
     </span>
   </a>
@@ -702,22 +702,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#3-planar-dmos-vs-trench-umos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. 주요 설계 파라미터
+        3. Planar (DMOS) vs Trench (UMOS)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. 주요 설계 파라미터">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sic-super-junction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. SiC Super Junction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 주요 설계 파라미터
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 주요 설계 파라미터">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31-drift-layer" class="md-nav__link">
+  <a href="#51-drift-layer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.1 Drift Layer 두께 / 농도
+        5.1 Drift Layer 두께 / 농도
       
     </span>
   </a>
@@ -725,10 +747,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#32-jfet-resistance" class="md-nav__link">
+  <a href="#52-jfet-resistance-planar" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.2 JFET Resistance
+        5.2 JFET Resistance (Planar)
       
     </span>
   </a>
@@ -736,10 +758,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#33-p-well" class="md-nav__link">
+  <a href="#53-p-well" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.3 P-well 농도 / 깊이
+        5.3 P-well 농도 / 깊이
       
     </span>
   </a>
@@ -752,10 +774,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
+  <a href="#6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. 제조 공정 흐름 (요약)
+        6. 제조 공정 흐름 (요약)
       
     </span>
   </a>
@@ -763,10 +785,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
+  <a href="#7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. 참고 자료
+        7. 공통 수명·신뢰성 이슈
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 참고자료
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2026-05-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        추가 노트 (2026-05-24)
       
     </span>
   </a>
@@ -2452,10 +2496,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1-sic-sbd-schottky-barrier-diode" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 기본 구조
+        1. SiC SBD (Schottky Barrier Diode)
       
     </span>
   </a>
@@ -2463,10 +2507,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-planar-vs-trench" class="md-nav__link">
+  <a href="#2-sic-mosfet" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Planar vs Trench
+        2. SiC MOSFET 기본 구조
       
     </span>
   </a>
@@ -2474,22 +2518,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#3-planar-dmos-vs-trench-umos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. 주요 설계 파라미터
+        3. Planar (DMOS) vs Trench (UMOS)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. 주요 설계 파라미터">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sic-super-junction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. SiC Super Junction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 주요 설계 파라미터
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 주요 설계 파라미터">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31-drift-layer" class="md-nav__link">
+  <a href="#51-drift-layer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.1 Drift Layer 두께 / 농도
+        5.1 Drift Layer 두께 / 농도
       
     </span>
   </a>
@@ -2497,10 +2563,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#32-jfet-resistance" class="md-nav__link">
+  <a href="#52-jfet-resistance-planar" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.2 JFET Resistance
+        5.2 JFET Resistance (Planar)
       
     </span>
   </a>
@@ -2508,10 +2574,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#33-p-well" class="md-nav__link">
+  <a href="#53-p-well" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.3 P-well 농도 / 깊이
+        5.3 P-well 농도 / 깊이
       
     </span>
   </a>
@@ -2524,10 +2590,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
+  <a href="#6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. 제조 공정 흐름 (요약)
+        6. 제조 공정 흐름 (요약)
       
     </span>
   </a>
@@ -2535,10 +2601,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
+  <a href="#7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. 참고 자료
+        7. 공통 수명·신뢰성 이슈
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 참고자료
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2026-05-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        추가 노트 (2026-05-24)
       
     </span>
   </a>
@@ -2570,10 +2658,19 @@
   
 
 
-<h1 id="sic-mosfet">SiC MOSFET 구조<a class="headerlink" href="#sic-mosfet" title="Permanent link">&para;</a></h1>
-<h2 id="1">1. 기본 구조<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<p>SiC Power MOSFET은 **수직형(Vertical) 구조**가 표준입니다.
-드레인 전류가 표면 채널 → drift layer → backside drain으로 흐릅니다.</p>
+<h1 id="ch3-sic">Ch.3 SiC 디바이스 구조<a class="headerlink" href="#ch3-sic" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>핵심 키워드</strong>: SBD/JBS · Planar DMOS · Trench UMOS · Super Junction · Vth · Bipolar Degradation · TDDB
+<strong>목적</strong>: SiC SBD · MOSFET (Planar / Trench) · Super Junction 의 동작 원리와 결함·신뢰성 취약점 파악.</p>
+</blockquote>
+<h2 id="1-sic-sbd-schottky-barrier-diode">1. SiC SBD (Schottky Barrier Diode)<a class="headerlink" href="#1-sic-sbd-schottky-barrier-diode" title="Permanent link">&para;</a></h2>
+<ul>
+<li>가장 먼저 양산된 SiC 제품. <strong>단극성 동작</strong> → 역회복 손실 극소.</li>
+<li><strong>JBS (Junction Barrier Schottky)</strong> — P+ 영역 임베딩으로 Surge 내량 · Leakage 트레이드오프 해결.</li>
+<li><strong>결함 취약</strong> — TSD 위치의 Schottky Leakage, Carrot / Triangular 의 Killer 영향.</li>
+</ul>
+<h2 id="2-sic-mosfet">2. SiC MOSFET 기본 구조<a class="headerlink" href="#2-sic-mosfet" title="Permanent link">&para;</a></h2>
+<p>SiC Power MOSFET 은 <strong>수직 (Vertical) 구조</strong> 가 표준. 드레인 전류가 표면 채널 → drift layer → backside drain 으로 흐름.</p>
 <pre class="mermaid"><code>flowchart TB
     subgraph Top
         S1[Source] --- G[Gate / Oxide]
@@ -2593,13 +2690,13 @@
     Top --&gt; Middle
     Middle --&gt; Drift
     Drift --&gt; Bottom</code></pre>
-<h2 id="2-planar-vs-trench">2. Planar vs Trench<a class="headerlink" href="#2-planar-vs-trench" title="Permanent link">&para;</a></h2>
+<h2 id="3-planar-dmos-vs-trench-umos">3. Planar (DMOS) vs Trench (UMOS)<a class="headerlink" href="#3-planar-dmos-vs-trench-umos" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>항목</th>
 <th>Planar (DMOS)</th>
-<th>Trench</th>
+<th>Trench (UMOS)</th>
 </tr>
 </thead>
 <tbody>
@@ -2621,34 +2718,40 @@
 <tr>
 <td>Ron 손실</td>
 <td>JFET resistance 큼</td>
-<td>JFET resistance 작음</td>
+<td>JFET resistance 작음 / Ron 획기적 감소</td>
 </tr>
 <tr>
-<td>Gate oxide 신뢰성</td>
+<td>Gate Oxide 신뢰성</td>
 <td>안정</td>
 <td>Trench 코너 전계 집중 → 보호 구조 필요</td>
 </tr>
 <tr>
-<td>대표 제품</td>
-<td>Wolfspeed, ROHM</td>
-<td>Infineon CoolSiC™, ON Semi</td>
+<td>결함 관리 포인트</td>
+<td>P-well 채널 · JFET pinch 영역 GOI</td>
+<td><strong>In-trench defect</strong> · 코너 GOI</td>
+</tr>
+<tr>
+<td>대표 구조·제품</td>
+<td>Wolfspeed, ROHM (초기)</td>
+<td>Asymmetric Trench (Rohm) · Double-Trench (Toshiba) · Bottom P-shield (onsemi EliteSiC)</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition experience">
-<p class="admonition-title">현장 노트</p>
-<p>Trench 구조에서 가장 까다로운 부분은 **Trench 코너의 Gate oxide 신뢰성**입니다.
-Si Trench MOSFET 경험을 바탕으로 보면, SiC는 더 좁은 trench + 더 가파른 측벽 + NO 어닐링 조건 최적화가 핵심입니다.</p>
+<div class="admonition note">
+<p class="admonition-title">Trench 구조 핵심 이슈</p>
+<p>Trench 코너의 Gate Oxide 신뢰성이 가장 까다로움. 좁은 trench + 가파른 측벽 + <strong>NO / N₂O 어닐링</strong> 조건 최적화가 핵심. Trench 내부에서 발생하는 In-trench defect 는 양산 사이트의 핵심 관리 항목.</p>
 </div>
-<h2 id="3">3. 주요 설계 파라미터<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<h3 id="31-drift-layer">3.1 Drift Layer 두께 / 농도<a class="headerlink" href="#31-drift-layer" title="Permanent link">&para;</a></h3>
+<h2 id="4-sic-super-junction">4. SiC Super Junction<a class="headerlink" href="#4-sic-super-junction" title="Permanent link">&para;</a></h2>
+<ul>
+<li>N-pillar 와 P-pillar 를 교차 배치 → 고전압 · 저 Ron 동시 달성.</li>
+<li><strong>공정 구현</strong> — 다중 에피 + 이온주입 (Multi-epi) 또는 Trench fill (P-pillar epi refill).</li>
+<li><strong>결함 취약</strong> — P-pillar 정렬, Bow / Stress, 이온주입 프로파일 이상.</li>
+</ul>
+<h2 id="5">5. 주요 설계 파라미터<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h3 id="51-drift-layer">5.1 Drift Layer 두께 / 농도<a class="headerlink" href="#51-drift-layer" title="Permanent link">&para;</a></h3>
 <p>내압 <span class="arithmatex">\(V_{BR}\)</span> 와 drift layer 농도 <span class="arithmatex">\(N_D\)</span> 의 관계:</p>
-<div class="arithmatex">\[
-V_{BR} \approx \frac{\varepsilon_s E_c^2}{2qN_D}
-\]</div>
-<div class="arithmatex">\[
-W_{drift} = \frac{\varepsilon_s E_c}{q N_D}
-\]</div>
+<div class="arithmatex">\[V_{BR} \approx \frac{\varepsilon_s E_c^2}{2qN_D}\]</div>
+<div class="arithmatex">\[W_{drift} = \frac{\varepsilon_s E_c}{q N_D}\]</div>
 <p>여기서 <span class="arithmatex">\(E_c \approx 2.5 \text{ MV/cm}\)</span> (4H-SiC).</p>
 <table>
 <thead>
@@ -2661,39 +2764,35 @@ W_{drift} = \frac{\varepsilon_s E_c}{q N_D}
 <tbody>
 <tr>
 <td>650 V</td>
-<td>~1.5e16</td>
+<td>~1.5×10¹⁶</td>
 <td>~5</td>
 </tr>
 <tr>
-<td>1200 V</td>
-<td>~8e15</td>
+<td>1,200 V</td>
+<td>~8×10¹⁵</td>
 <td>~10</td>
 </tr>
 <tr>
-<td>1700 V</td>
-<td>~5e15</td>
+<td>1,700 V</td>
+<td>~5×10¹⁵</td>
 <td>~15</td>
 </tr>
 <tr>
-<td>3300 V</td>
-<td>~2e15</td>
+<td>3,300 V</td>
+<td>~2×10¹⁵</td>
 <td>~30</td>
 </tr>
 </tbody>
 </table>
-<h3 id="32-jfet-resistance">3.2 JFET Resistance<a class="headerlink" href="#32-jfet-resistance" title="Permanent link">&para;</a></h3>
-<p>Planar 구조에서 JFET region의 폭과 doping이 Ron에 직접 영향:</p>
-<div class="arithmatex">\[
-R_{JFET} \propto \frac{W_{JFET}}{q \mu_n N_D}
-\]</div>
-<p>너무 좁으면 JFET pinch-off로 Ron 증가, 너무 넓으면 cell pitch 증가.
-일반적으로 <strong>1.5~2.5 μm</strong> 범위에서 최적화합니다.</p>
-<h3 id="33-p-well">3.3 P-well 농도 / 깊이<a class="headerlink" href="#33-p-well" title="Permanent link">&para;</a></h3>
+<h3 id="52-jfet-resistance-planar">5.2 JFET Resistance (Planar)<a class="headerlink" href="#52-jfet-resistance-planar" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[R_{JFET} \propto \frac{W_{JFET}}{q \mu_n N_D}\]</div>
+<p>너무 좁으면 JFET pinch-off 로 Ron 증가, 너무 넓으면 cell pitch 증가. 일반적으로 <strong>1.5 ~ 2.5 μm</strong> 범위에서 최적화.</p>
+<h3 id="53-p-well">5.3 P-well 농도 / 깊이<a class="headerlink" href="#53-p-well" title="Permanent link">&para;</a></h3>
 <ul>
-<li>P-well 농도 ↑ → threshold voltage ↑, BV 안정 / 채널 이동도 ↓</li>
-<li>P-well 깊이 ↓ → JFET resistance ↓ / punch-through 위험 ↑</li>
+<li>P-well 농도 ↑ → Threshold voltage ↑, BV 안정 / 채널 이동도 ↓</li>
+<li>P-well 깊이 ↓ → JFET resistance ↓ / Punch-through 위험 ↑</li>
 </ul>
-<h2 id="4">4. 제조 공정 흐름 (요약)<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h2 id="6">6. 제조 공정 흐름 (요약)<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>flowchart LR
     A[Wafer 입고&lt;br/&gt;4H-SiC N+ + N- Epi] --&gt; B[Alignment Mark]
     B --&gt; C[P-well Implant&lt;br/&gt;Al]
@@ -2705,11 +2804,48 @@ R_{JFET} \propto \frac{W_{JFET}}{q \mu_n N_D}
     H --&gt; I[Backside Thinning]
     I --&gt; J[Backside Metal + Laser Anneal]
     J --&gt; K[Final Test]</code></pre>
-<h2 id="5">5. 참고 자료<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<p>상세 단위 공정 → <a href="../../02-process/ch04-process-flow/">Ch.4 SiC 공정 흐름 (FEOL→BEOL)</a>.</p>
+<h2 id="7">7. 공통 수명·신뢰성 이슈<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>이슈</th>
+<th>메커니즘</th>
+<th>관련 챕터</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Vth Shift</strong></td>
+<td>고온·고전압 stress 시 SiC/SiO₂ 계면 trap charge 변동</td>
+<td><a href="../../03-defect/d13-bti/">D-13 BTI</a></td>
+</tr>
+<tr>
+<td><strong>Bipolar Degradation</strong></td>
+<td>BPD 기인 Stacking Fault 확장 → Vf / Ron 증가</td>
+<td><a href="../../03-defect/d14-body-diode/">D-14 Body Diode &amp; BPD</a></td>
+</tr>
+<tr>
+<td><strong>Gate Oxide TDDB</strong></td>
+<td>SiC/SiO₂ 계면 trap 밀도가 Si 대비 높아 신뢰성 마진 낮음</td>
+<td><a href="../../03-defect/d12-gate-oxide/">D-12 Gate Oxide</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="8">8. 참고자료<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
 <ul>
 <li>B. J. Baliga, <em>Fundamentals of Power Semiconductor Devices</em>, Springer</li>
-<li>onsemi SiC MOSFET 제품군: <a href="https://www.onsemi.com/products/discrete-power-modules/silicon-carbide-sic">https://www.onsemi.com/products/discrete-power-modules/silicon-carbide-sic</a></li>
 <li>T. Kimoto, <em>Fundamentals of Silicon Carbide Technology</em>, Wiley</li>
+<li>onsemi EliteSiC M3S Trench MOSFET Datasheet</li>
+<li>Toshiba, "Double-Trench SiC MOSFET", 2017</li>
+<li>Rohm Gen4 Trench Architecture White Paper</li>
+<li><a href="https://www.onsemi.com/products/discrete-power-modules/silicon-carbide-sic">onsemi SiC MOSFET 제품군</a></li>
+</ul>
+<hr />
+<h2 id="2026-05-24">추가 노트 (2026-05-24)<a class="headerlink" href="#2026-05-24" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Notion <code>Chapter 3. SiC 디바이스 구조</code> 본문과 기존 MOSFET 본문을 통합.</li>
+<li>SBD / JBS · Super Junction 섹션 신설, Planar / Trench 비교표에 결함 관리 포인트 컬럼 추가.</li>
 </ul>
 
 
@@ -2733,7 +2869,7 @@ R_{JFET} \propto \frac{W_{JFET}}{q \mu_n N_D}
     <span class="md-icon" title="마지막 업데이트">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026년 5월 23일 14:52:16 UTC">2026년 5월 23일</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026년 5월 24일 06:58:26 UTC">2026년 5월 24일</span>
   </span>
 
     
