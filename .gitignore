@@ -17,3 +17,7 @@ site/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Cowork session metadata
+.claude/
+
