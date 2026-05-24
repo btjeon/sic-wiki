@@ -1,10 +1,10 @@
 # ===========================================================
-# SiC 반도체 위키 - MkDocs 설정
-# 작성자: Byoungtak Jeon (전병탁)
+# SiC Semiconductor Wiki - MkDocs configuration
+# Author: Byoungtak Jeon
 # ===========================================================
 
-site_name: SiC 반도체 위키
-site_description: SiC(Silicon Carbide) 반도체 소자·공정·FDC·AI 응용 정리
+site_name: SiC Semiconductor Wiki
+site_description: SiC (Silicon Carbide) semiconductor device, process, FDC, and AI applications knowledge base
 site_author: Byoungtak Jeon
 site_url: https://btjeon.github.io/sic-wiki/
 
@@ -20,44 +20,44 @@ copyright: Copyright &copy; 2026 Byoungtak Jeon
 # -----------------------------------------------------------
 theme:
   name: material
-  language: ko
+  language: en
   features:
-    - navigation.instant         # SPA 스타일 페이지 전환
-    - navigation.tracking        # URL 자동 갱신
-    - navigation.tabs            # 상단 탭
+    - navigation.instant         # SPA-style page transitions
+    - navigation.tracking        # URL auto-update
+    - navigation.tabs            # top tabs
     - navigation.tabs.sticky
-    - navigation.sections        # 좌측 섹션 그룹
-    - navigation.expand          # 좌측 메뉴 펼침
-    - navigation.indexes         # 섹션 index.md 지원
-    - navigation.top             # 맨 위로 버튼
+    - navigation.sections        # left section grouping
+    - navigation.expand          # expand left menu
+    - navigation.indexes         # section index.md support
+    - navigation.top             # back-to-top button
     - navigation.footer
     - search.suggest
     - search.highlight
     - search.share
-    - content.code.copy          # 코드 복사 버튼
-    - content.code.annotate      # 코드 주석
+    - content.code.copy          # code copy button
+    - content.code.annotate      # code annotations
     - content.tabs.link
-    - content.action.edit        # GitHub edit 버튼
+    - content.action.edit        # GitHub edit button
     - toc.follow
   palette:
-    # 라이트 모드
+    # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: indigo
       accent: deep purple
       toggle:
         icon: material/weather-night
-        name: 다크 모드로 전환
-    # 다크 모드
+        name: Switch to dark mode
+    # Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: indigo
       accent: deep purple
       toggle:
         icon: material/weather-sunny
-        name: 라이트 모드로 전환
+        name: Switch to light mode
   font:
-    text: Noto Sans KR
+    text: Inter
     code: JetBrains Mono
   icon:
     repo: fontawesome/brands/github
@@ -134,75 +134,74 @@ markdown_extensions:
 plugins:
   - search:
       lang:
-        - ko
         - en
   - tags
   - git-revision-date-localized:
       enable_creation_date: true
       type: date
-      fallback_to_build_date: true   # git 저장소가 아닐 때 빌드 날짜로 대체
+      fallback_to_build_date: true   # use build date when not a git repo
   - awesome-pages
 
 # -----------------------------------------------------------
-# 좌측 내비게이션
+# Left navigation
 # -----------------------------------------------------------
 nav:
-  - 홈: index.md
-  - 소개: about.md
+  - Home: index.md
+  - About: about.md
 
   - Part I. SiC Foundations:
-      - 개요: 01-foundations/index.md
-      - Ch.1 SiC 재료·결정 기초: 01-foundations/ch01-material.md
-      - Ch.2 SiC 웨이퍼 & 에피택셜 성장: 01-foundations/ch02-wafer-epi.md
-      - Ch.3 SiC 디바이스 구조: 01-foundations/ch03-device.md
+      - Overview: 01-foundations/index.md
+      - Ch.1 SiC Material & Crystal Fundamentals: 01-foundations/ch01-material.md
+      - Ch.2 SiC Wafer & Epitaxial Growth: 01-foundations/ch02-wafer-epi.md
+      - Ch.3 SiC Device Structures: 01-foundations/ch03-device.md
 
   - Part II. Process & Manufacturing:
-      - 개요: 02-process/index.md
-      - Ch.4 SiC 공정 흐름 (FEOL→BEOL): 02-process/ch04-process-flow.md
-      - Ch.5 onsemi SiC 사업·제품·BK Factory: 02-process/ch05-onsemi-bk.md
-      - Ch.6 수직계열 통합 공급망 & EV 전략: 02-process/ch06-vertical-integration.md
+      - Overview: 02-process/index.md
+      - Ch.4 SiC Process Flow (FEOL → BEOL): 02-process/ch04-process-flow.md
+      - Ch.5 onsemi SiC Business · Products · BK Factory: 02-process/ch05-onsemi-bk.md
+      - Ch.6 Vertical Supply Chain & EV Strategy: 02-process/ch06-vertical-integration.md
 
   - Part III. SiC Defect Management:
-      - 개요: 03-defect/index.md
-      - A. 결함의 이해:
-          - A-1 결함 분류 체계: 03-defect/a01-classification.md
-          - A-2 SiC 표면 결함: 03-defect/a02-surface.md
-          - A-3 Trench·Sub-CD 마이크로 결함: 03-defect/a03-trench-subcd.md
-          - A-4 Killer/Slow-Killer RCA: 03-defect/a04-killer-rca.md
-      - B. 검사 장비·AI·운영:
-          - B-5 AOI 검사 장비 운영: 03-defect/b05-aoi.md
+      - Overview: 03-defect/index.md
+      - A. Understanding Defects:
+          - A-1 Defect Classification: 03-defect/a01-classification.md
+          - A-2 SiC Surface Defects: 03-defect/a02-surface.md
+          - A-3 Trench & Sub-CD Micro Defects: 03-defect/a03-trench-subcd.md
+          - A-4 Killer / Slow-Killer RCA: 03-defect/a04-killer-rca.md
+      - B. Inspection Equipment · AI · Operations:
+          - B-5 AOI Equipment Operations: 03-defect/b05-aoi.md
           - B-6 ADC (Auto Defect Classification): 03-defect/b06-adc.md
-          - B-7 Klarity 운영: 03-defect/b07-klarity.md
-      - C. 관리 체계·품질:
-          - C-8 SPC 기반 결함 밀도 관리: 03-defect/c08-spc.md
+          - B-7 Klarity Operations: 03-defect/b07-klarity.md
+      - C. Control Systems · Quality:
+          - C-8 SPC-based Defect Density Mgmt: 03-defect/c08-spc.md
           - C-9 VOG (Visual Outgoing Inspection): 03-defect/c09-vog.md
-          - C-10 신규 공정 도입시 결함 관리: 03-defect/c10-new-process.md
-      - D. 신뢰성 백서 (TND6396):
-          - D-11 신뢰성 방법론 & Qualification: 03-defect/d11-reliability.md
-          - D-12 SiC/SiO₂ 계면 & Gate Oxide: 03-defect/d12-gate-oxide.md
+          - C-10 New Process Introduction: 03-defect/c10-new-process.md
+      - D. Reliability White Paper (TND6396):
+          - D-11 Reliability Methodology & Qualification: 03-defect/d11-reliability.md
+          - D-12 SiC/SiO₂ Interface & Gate Oxide: 03-defect/d12-gate-oxide.md
           - D-13 BTI & Dynamic Stressing: 03-defect/d13-bti.md
           - D-14 Body Diode & BPD Management: 03-defect/d14-body-diode.md
 
-  - Part IV. 공정 제어 & AI 확장:
-      - 개요: 04-control-ai/index.md
-      - Photo 공정:
-          - FEOL/BEOL 포토리소그래피: 04-control-ai/photo-feol-beol.md
-          - OPC 마스크 설계: 04-control-ai/photo-opc.md
+  - Part IV. Process Control & AI Extension:
+      - Overview: 04-control-ai/index.md
+      - Photo Process:
+          - FEOL/BEOL Photolithography: 04-control-ai/photo-feol-beol.md
+          - OPC Mask Design: 04-control-ai/photo-opc.md
           - ASML/Nikon Tool Matching: 04-control-ai/photo-tool-matching.md
       - FDC / SPC:
-          - Weco Rule 설계: 04-control-ai/fdc-weco-rules.md
-          - FDC AI 이상 감지 사례: 04-control-ai/fdc-ai-anomaly.md
-          - GNN 기반 FDC: 04-control-ai/fdc-gnn.md
+          - WECO Rule Design: 04-control-ai/fdc-weco-rules.md
+          - FDC AI Anomaly Detection: 04-control-ai/fdc-ai-anomaly.md
+          - GNN-based FDC: 04-control-ai/fdc-gnn.md
       - Machine Vision & AI:
-          - 머신비전 적용 (WCMP): 04-control-ai/ai-machine-vision.md
-          - 불량 분류 모델: 04-control-ai/ai-defect-classification.md
-          - RCA Ontology (PCB→SiC): 04-control-ai/ai-rca-ontology.md
+          - Machine Vision (WCMP): 04-control-ai/ai-machine-vision.md
+          - Defect Classification Model: 04-control-ai/ai-defect-classification.md
+          - RCA Ontology (PCB → SiC): 04-control-ai/ai-rca-ontology.md
 
   - Part V. References:
-      - 자료 색인: 05-references/index.md
+      - Index: 05-references/index.md
       - TND6396 — Robust Reliability: 05-references/tnd6396.md
       - BRD8094 — Vertical Integration: 05-references/brd8094.md
-      - 용어집 (Glossary): 05-references/glossary.md
+      - Glossary: 05-references/glossary.md
 
 # -----------------------------------------------------------
 # 푸터 / 소셜

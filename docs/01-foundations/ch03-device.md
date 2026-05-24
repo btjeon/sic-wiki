@@ -1,21 +1,21 @@
 ---
-title: Ch.3 SiC 디바이스 구조
+title: Ch.3 SiC Device Structures
 ---
 
-# Ch.3 SiC 디바이스 구조
+# Ch.3 SiC Device Structures
 
-> **핵심 키워드**: SBD/JBS · Planar DMOS · Trench UMOS · Super Junction · Vth · Bipolar Degradation · TDDB
-> **목적**: SiC SBD · MOSFET (Planar / Trench) · Super Junction 의 동작 원리와 결함·신뢰성 취약점 파악.
+> **Keywords**: SBD/JBS · Planar DMOS · Trench UMOS · Super Junction · Vth · Bipolar Degradation · TDDB
+> **Purpose**: Understand the operating principles and defect / reliability weak points of SiC SBD · MOSFET (Planar / Trench) · Super Junction.
 
 ## 1. SiC SBD (Schottky Barrier Diode)
 
-- 가장 먼저 양산된 SiC 제품. **단극성 동작** → 역회복 손실 극소.
-- **JBS (Junction Barrier Schottky)** — P+ 영역 임베딩으로 Surge 내량 · Leakage 트레이드오프 해결.
-- **결함 취약** — TSD 위치의 Schottky Leakage, Carrot / Triangular 의 Killer 영향.
+- First SiC product to reach mass production. **Unipolar operation** → minimal reverse-recovery loss.
+- **JBS (Junction Barrier Schottky)** — embedded P+ regions solve the surge-rating ↔ leakage trade-off.
+- **Defect weak points** — Schottky leakage at TSD sites, killer impact of Carrot / Triangular defects.
 
-## 2. SiC MOSFET 기본 구조
+## 2. SiC MOSFET — Basic Structure
 
-SiC Power MOSFET 은 **수직 (Vertical) 구조** 가 표준. 드레인 전류가 표면 채널 → drift layer → backside drain 으로 흐름.
+The SiC Power MOSFET is standardized on a **vertical structure**. Drain current flows from the surface channel → drift layer → backside drain.
 
 ```mermaid
 flowchart TB
@@ -41,38 +41,38 @@ flowchart TB
 
 ## 3. Planar (DMOS) vs Trench (UMOS)
 
-| 항목 | Planar (DMOS) | Trench (UMOS) |
+| Item | Planar (DMOS) | Trench (UMOS) |
 |------|---------------|---------------|
-| 채널 방향 | 수평 (basal plane) | 수직 (a-face 등) |
-| 채널 이동도 | 낮음 (20~40 cm²/V·s) | 높음 (~100 cm²/V·s) |
-| Cell pitch | 큼 | 작음 (집적도↑) |
-| Ron 손실 | JFET resistance 큼 | JFET resistance 작음 / Ron 획기적 감소 |
-| Gate Oxide 신뢰성 | 안정 | Trench 코너 전계 집중 → 보호 구조 필요 |
-| 결함 관리 포인트 | P-well 채널 · JFET pinch 영역 GOI | **In-trench defect** · 코너 GOI |
-| 대표 구조·제품 | Wolfspeed, ROHM (초기) | Asymmetric Trench (Rohm) · Double-Trench (Toshiba) · Bottom P-shield (onsemi EliteSiC) |
+| Channel orientation | Horizontal (basal plane) | Vertical (a-face, etc.) |
+| Channel mobility | Low (20~40 cm²/V·s) | High (~100 cm²/V·s) |
+| Cell pitch | Large | Small (higher density) |
+| Ron loss | Large JFET resistance | Small JFET resistance / dramatically reduced Ron |
+| Gate Oxide reliability | Stable | Field crowding at trench corner → protection structure required |
+| Defect-management focus | P-well channel · JFET pinch-region GOI | **In-trench defects** · corner GOI |
+| Representative structures / products | Wolfspeed, ROHM (early) | Asymmetric Trench (Rohm) · Double-Trench (Toshiba) · Bottom P-shield (onsemi EliteSiC) |
 
-!!! note "Trench 구조 핵심 이슈"
-    Trench 코너의 Gate Oxide 신뢰성이 가장 까다로움. 좁은 trench + 가파른 측벽 + **NO / N₂O 어닐링** 조건 최적화가 핵심. Trench 내부에서 발생하는 In-trench defect 는 양산 사이트의 핵심 관리 항목.
+!!! note "Key issue with trench structures"
+    Gate-oxide reliability at the trench corner is the most demanding aspect. Narrow trench + steep sidewalls + **NO / N₂O annealing** condition optimization is the key. In-trench defects formed inside the trench are a core management item for mass-production sites.
 
 ## 4. SiC Super Junction
 
-- N-pillar 와 P-pillar 를 교차 배치 → 고전압 · 저 Ron 동시 달성.
-- **공정 구현** — 다중 에피 + 이온주입 (Multi-epi) 또는 Trench fill (P-pillar epi refill).
-- **결함 취약** — P-pillar 정렬, Bow / Stress, 이온주입 프로파일 이상.
+- Alternating N-pillars and P-pillars → achieve high voltage and low Ron simultaneously.
+- **Process implementation** — multi-epi + ion implantation, or trench fill (P-pillar epi refill).
+- **Defect weak points** — P-pillar alignment, bow / stress, ion-implant profile deviations.
 
-## 5. 주요 설계 파라미터
+## 5. Key Design Parameters
 
-### 5.1 Drift Layer 두께 / 농도
+### 5.1 Drift-layer Thickness / Doping
 
-내압 $V_{BR}$ 와 drift layer 농도 $N_D$ 의 관계:
+Relation between breakdown voltage $V_{BR}$ and drift-layer doping $N_D$:
 
 $$V_{BR} \approx \frac{\varepsilon_s E_c^2}{2qN_D}$$
 
 $$W_{drift} = \frac{\varepsilon_s E_c}{q N_D}$$
 
-여기서 $E_c \approx 2.5 \text{ MV/cm}$ (4H-SiC).
+with $E_c \approx 2.5 \text{ MV/cm}$ (4H-SiC).
 
-| 목표 내압 | $N_D$ (cm⁻³) | $W_{drift}$ (μm) |
+| Target BV | $N_D$ (cm⁻³) | $W_{drift}$ (μm) |
 |-----------|--------------|------------------|
 | 650 V | ~1.5×10¹⁶ | ~5 |
 | 1,200 V | ~8×10¹⁵ | ~10 |
@@ -83,18 +83,18 @@ $$W_{drift} = \frac{\varepsilon_s E_c}{q N_D}$$
 
 $$R_{JFET} \propto \frac{W_{JFET}}{q \mu_n N_D}$$
 
-너무 좁으면 JFET pinch-off 로 Ron 증가, 너무 넓으면 cell pitch 증가. 일반적으로 **1.5 ~ 2.5 μm** 범위에서 최적화.
+Too narrow causes JFET pinch-off and raises Ron; too wide increases cell pitch. Typically optimized in the **1.5 ~ 2.5 μm** range.
 
-### 5.3 P-well 농도 / 깊이
+### 5.3 P-well Doping / Depth
 
-- P-well 농도 ↑ → Threshold voltage ↑, BV 안정 / 채널 이동도 ↓
-- P-well 깊이 ↓ → JFET resistance ↓ / Punch-through 위험 ↑
+- Higher P-well doping → higher threshold voltage and more stable BV, but lower channel mobility.
+- Shallower P-well → lower JFET resistance, but increased punch-through risk.
 
-## 6. 제조 공정 흐름 (요약)
+## 6. Manufacturing Flow (summary)
 
 ```mermaid
 flowchart LR
-    A[Wafer 입고<br/>4H-SiC N+ + N- Epi] --> B[Alignment Mark]
+    A[Wafer in<br/>4H-SiC N+ + N- Epi] --> B[Alignment Mark]
     B --> C[P-well Implant<br/>Al]
     C --> D[N+ Source Implant<br/>P/N₂]
     D --> E[Activation Anneal<br/>1700℃, C-cap]
@@ -106,28 +106,28 @@ flowchart LR
     J --> K[Final Test]
 ```
 
-상세 단위 공정 → [Ch.4 SiC 공정 흐름 (FEOL→BEOL)](../02-process/ch04-process-flow.md).
+Unit-process detail → [Ch.4 SiC Process Flow (FEOL → BEOL)](../02-process/ch04-process-flow.md).
 
-## 7. 공통 수명·신뢰성 이슈
+## 7. Common Lifetime / Reliability Issues
 
-| 이슈 | 메커니즘 | 관련 챕터 |
+| Issue | Mechanism | Related chapter |
 |---|---|---|
-| **Vth Shift** | 고온·고전압 stress 시 SiC/SiO₂ 계면 trap charge 변동 | [D-13 BTI](../03-defect/d13-bti.md) |
-| **Bipolar Degradation** | BPD 기인 Stacking Fault 확장 → Vf / Ron 증가 | [D-14 Body Diode & BPD](../03-defect/d14-body-diode.md) |
-| **Gate Oxide TDDB** | SiC/SiO₂ 계면 trap 밀도가 Si 대비 높아 신뢰성 마진 낮음 | [D-12 Gate Oxide](../03-defect/d12-gate-oxide.md) |
+| **Vth shift** | Trap-charge fluctuation at the SiC/SiO₂ interface under high-temperature, high-voltage stress | [D-13 BTI](../03-defect/d13-bti.md) |
+| **Bipolar Degradation** | BPD-driven Stacking Fault expansion → Vf / Ron increase | [D-14 Body Diode & BPD](../03-defect/d14-body-diode.md) |
+| **Gate Oxide TDDB** | Higher SiC/SiO₂ interface trap density than Si → narrower reliability margin | [D-12 Gate Oxide](../03-defect/d12-gate-oxide.md) |
 
-## 8. 참고자료
+## 8. References
 
 - B. J. Baliga, *Fundamentals of Power Semiconductor Devices*, Springer
 - T. Kimoto, *Fundamentals of Silicon Carbide Technology*, Wiley
 - onsemi EliteSiC M3S Trench MOSFET Datasheet
 - Toshiba, "Double-Trench SiC MOSFET", 2017
 - Rohm Gen4 Trench Architecture White Paper
-- [onsemi SiC MOSFET 제품군](https://www.onsemi.com/products/discrete-power-modules/silicon-carbide-sic)
+- [onsemi SiC MOSFET product line](https://www.onsemi.com/products/discrete-power-modules/silicon-carbide-sic)
 
 ---
 
-## 추가 노트 (2026-05-24)
+## Notes (2026-05-24)
 
-- Notion `Chapter 3. SiC 디바이스 구조` 본문과 기존 MOSFET 본문을 통합.
-- SBD / JBS · Super Junction 섹션 신설, Planar / Trench 비교표에 결함 관리 포인트 컬럼 추가.
+- Merged the Notion `Chapter 3. SiC Device Structures` content with the existing MOSFET page.
+- Added new sections on SBD / JBS and Super Junction; added a defect-management column to the Planar / Trench comparison table.
